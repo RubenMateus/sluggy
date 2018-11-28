@@ -16,7 +16,7 @@ namespace Sluggy
             var sluggy = text
                 .LazySplit()
                 .Where(t => t.Any())
-                .LazyJoin()
+                .LazyJoin("-")
                 .ToArray();
 
             return new string(sluggy);
@@ -25,6 +25,7 @@ namespace Sluggy
         private static IEnumerable<IEnumerable<char>> LazySplit(this IEnumerable<char> chars)
         {
             var currList = Enumerable.Empty<char>();
+            
             foreach (var curr in chars)
             {
                 if (char.IsWhiteSpace(curr))
@@ -38,6 +39,8 @@ namespace Sluggy
                     currList = currList.Concat(curr.ToEnumerable());
                 }
             }
+            
+            yield return currList;
         }
 
         private static IEnumerable<T> ToEnumerable<T>(this T instance)
@@ -45,7 +48,7 @@ namespace Sluggy
             yield return instance;
         }
 
-        private static IEnumerable<char> LazyJoin(this IEnumerable<IEnumerable<char>> chars, IEnumerable<char> separator = "-")
+        private static IEnumerable<char> LazyJoin(this IEnumerable<IEnumerable<char>> chars, IEnumerable<char> separator)
         {
             var enumerator = chars.GetEnumerator();
             if (!enumerator.MoveNext())
