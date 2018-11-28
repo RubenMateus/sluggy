@@ -6,73 +6,44 @@ namespace Sluggy
 {
     public static class Sluggy
     {
+        public static readonly string DefaultSeparator = "-";
+
+        public static readonly ITranslationStrategy DefaultTranslationStrategy = new CompositeStrategy(
+            new NormalizationStrategy(),
+            new ToLowerCaseStrategy());
+
         public static string ToSlug(this string text)
+        {
+            return ToSlug(text, DefaultSeparator, DefaultTranslationStrategy);
+        }
+
+        public static string ToSlug(this string text, string separator)
+        {
+            return ToSlug(text, separator, DefaultTranslationStrategy);
+        }
+
+        public static string ToSlug(this string text, ITranslationStrategy strategy)
+        {
+            return ToSlug(text, DefaultSeparator, strategy);
+        }
+
+        public static string ToSlug(this string text, string separator, ITranslationStrategy strategy)
         {
             if (text == null)
             {
                 throw new ArgumentNullException(nameof(text));
             }
 
-            var sluggy = text
-                .LazySplit()
-                .Where(t => t.Any())
-                .LazyJoin("-")
-                .ToArray();
-
-            return new string(sluggy);
+            return text
+                .Split()
+                .Where(t => t.Length != 0)
+                .Select(t => strategy.Translate(t))
+                .Join(separator);
         }
 
-        private static IEnumerable<IEnumerable<char>> LazySplit(this IEnumerable<char> chars)
+        private static string Join(this IEnumerable<string> text, string separator)
         {
-            var currList = Enumerable.Empty<char>();
-            
-            foreach (var curr in chars)
-            {
-                if (char.IsWhiteSpace(curr))
-                {
-                    yield return currList;
-
-                    currList = Enumerable.Empty<char>();
-                }
-                else
-                {
-                    currList = currList.Concat(curr.ToEnumerable());
-                }
-            }
-            
-            yield return currList;
-        }
-
-        private static IEnumerable<T> ToEnumerable<T>(this T instance)
-        {
-            yield return instance;
-        }
-
-        private static IEnumerable<char> LazyJoin(this IEnumerable<IEnumerable<char>> chars, IEnumerable<char> separator)
-        {
-            var enumerator = chars.GetEnumerator();
-            if (!enumerator.MoveNext())
-            {
-                yield break;
-            }
-
-            foreach (var currChar in enumerator.Current)
-            {
-                yield return currChar;
-            }
-
-            while (enumerator.MoveNext())
-            {
-                foreach (var currChar in separator)
-                {
-                    yield return currChar;
-                }
-
-                foreach (var currChar in enumerator.Current)
-                {
-                    yield return currChar;
-                }
-            }
+            return string.Join(separator, text);
         }
     }
 }
