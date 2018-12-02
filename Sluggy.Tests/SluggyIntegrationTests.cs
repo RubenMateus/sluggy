@@ -7,7 +7,7 @@ namespace Sluggy.Tests
         [Theory]
         [InlineData("EU GOSTO DE TÁRTE", "euAgostoAdeAtarte", "A")]
         [InlineData("EU GOSTO", "euBananagosto", "Banana")]
-        public void Separator_ShouldThrowNullArgumentException(string value, string expectation, string separator)
+        public void ShouldUseSeparator(string value, string expectation, string separator)
         {
             var result = value.ToSlug(separator);
 
@@ -20,7 +20,7 @@ namespace Sluggy.Tests
         [InlineData("eu gosto de tarte", "eu-gosto-de-tarte")]
         [InlineData("eu não gosto de pão da avó", "eu-nao-gosto-de-pao-da-avo")]
         [InlineData("", "")]
-        public void SimpleUpperCaseString_ShouldConvertToSimpleSlug(string value, string expectation)
+        public void ShouldConvertToSlug(string value, string expectation)
         {
             var slugified = value.ToSlug();
 

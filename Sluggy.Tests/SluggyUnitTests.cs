@@ -7,7 +7,7 @@ namespace Sluggy.Tests
     public class SluggyUnitTests
     {
         [Fact]
-        public void NullString_ShouldThrowNullArgumentException()
+        public void ShouldThrowNullArgumentException()
         {
             const string cena = null;
 
@@ -17,7 +17,8 @@ namespace Sluggy.Tests
         [Theory]
         [InlineData("EU GOSTO DE TÁRTE", "tarte-tarte-tarte-tarte")]
         [InlineData("EU GOSTO", "tarte-tarte")]
-        public void Banana_ShouldThrowNullArgumentException(string value, string exepectation)
+        [InlineData("EU não GOSTO", "tarte-tarte-tarte")]
+        public void ShouldReturnSlugifiedWithMocked(string value, string expectation)
         {
             const string translated = "tarte";
 
@@ -28,7 +29,7 @@ namespace Sluggy.Tests
 
             var result = value.ToSlug(strategyMock.Object);
 
-            Assert.Equal(exepectation, result);
+            Assert.Equal(expectation, result);
         }
     }
 }
