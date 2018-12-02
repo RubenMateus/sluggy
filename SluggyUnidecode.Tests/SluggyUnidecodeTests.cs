@@ -3,7 +3,7 @@ using Xunit;
 
 namespace SluggyUnidecode.Tests
 {
-    public class UnitTest1
+    public class SluggyUnidecodeTests
     {
     }
 }
