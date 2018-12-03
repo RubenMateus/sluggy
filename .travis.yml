@@ -10,3 +10,4 @@ script:
   - dotnet build
   - dotnet test Sluggy.Tests/Sluggy.Tests.csproj
   - dotnet test SluggyUnidecode.Tests/SluggyUnidecode.Tests.csproj
+  - xbuild /p:Configuration=Release Sluggy.sln
