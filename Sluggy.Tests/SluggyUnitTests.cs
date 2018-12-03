@@ -6,7 +6,8 @@ namespace Sluggy.Tests
 {
     public class SluggyUnitTests
     {
-        [Fact]
+        [Trait("Project", "Sluggy")]
+        [Fact(DisplayName = "Should Throw NullArgumentException")]
         public void ShouldThrowNullArgumentException()
         {
             const string cena = null;
@@ -14,7 +15,8 @@ namespace Sluggy.Tests
             Assert.Throws<ArgumentNullException>(() => cena.ToSlug());
         }
 
-        [Theory]
+        [Trait("Project", "Sluggy")]
+        [Theory(DisplayName = "Should Return ToSlug With Mocked Translate")]
         [InlineData("EU GOSTO DE TÁRTE", "tarte-tarte-tarte-tarte")]
         [InlineData("EU GOSTO", "tarte-tarte")]
         [InlineData("EU não GOSTO", "tarte-tarte-tarte")]

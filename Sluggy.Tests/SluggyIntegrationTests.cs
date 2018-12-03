@@ -4,7 +4,8 @@ namespace Sluggy.Tests
 {
     public class SluggyIntegrationTests
     {
-        [Theory]
+        [Trait("Project", "Sluggy")]
+        [Theory(DisplayName = "Should Use Separator")]
         [InlineData("EU GOSTO DE TÁRTE", "euAgostoAdeAtarte", "A")]
         [InlineData("EU GOSTO", "euBananagosto", "Banana")]
         public void ShouldUseSeparator(string value, string expectation, string separator)
@@ -14,7 +15,8 @@ namespace Sluggy.Tests
             Assert.Equal(expectation, result);
         }
 
-        [Theory]
+        [Trait("Project", "Sluggy")]
+        [Theory(DisplayName = "Should Convert ToSlug")]
         [InlineData("EU GOSTO DE TÁRTE", "eu-gosto-de-tarte")]
         [InlineData("eu gosto de tarte        das", "eu-gosto-de-tarte-das")]
         [InlineData("eu gosto de tarte", "eu-gosto-de-tarte")]

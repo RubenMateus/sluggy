@@ -2,10 +2,21 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
-    <Authors>Ruben_Mateus</Authors>
+    <Authors>Ruben Mateus</Authors>
     <PackageId>Sluggy</PackageId>
-    <Company>Ruben_Mateus</Company>
-    <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
+    <Company>Ruben Mateus</Company>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <PackageLicenseUrl>https://raw.githubusercontent.com/RubenMateus/sluggy/master/LICENSE</PackageLicenseUrl>
+    <PackageProjectUrl />
+    <RepositoryUrl>https://github.com/RubenMateus/sluggy</RepositoryUrl>
+    <Copyright>Copyright (c) 2018 Ruben Mateus</Copyright>
+    <PackageTags>slug simple normalization url friendly generator normalizer urls slugs</PackageTags>
+    <Description>Sluggy is a configuration based class library designed to create friendly URL's. 
+
+With crazy support out of the box, but fully configurable.</Description>
+    <PackageReleaseNotes>First Minor Release with .NET Standard 2.0 support. Updated coverage tests.</PackageReleaseNotes>
+    <RepositoryType>Library</RepositoryType>
+    <Version>1.0.1</Version>
   </PropertyGroup>
 
 </Project>
