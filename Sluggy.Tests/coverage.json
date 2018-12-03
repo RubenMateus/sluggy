@@ -1,0 +1,193 @@
+{
+  "Sluggy.dll": {
+    "C:\\Users\\ruben\\Documents\\13_Programming\\Projects\\sluggy\\Sluggy\\CompositeStrategy.cs": {
+      "Sluggy.CompositeStrategy": {
+        "System.String Sluggy.CompositeStrategy::Translate(System.String)": {
+          "Lines": {
+            "20": 26,
+            "21": 130,
+            "22": 26,
+            "23": 26,
+            "24": 26,
+            "26": 26,
+            "27": 26
+          },
+          "Branches": [
+            {
+              "Line": 21,
+              "Offset": 40,
+              "EndOffset": 16,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 26
+            },
+            {
+              "Line": 21,
+              "Offset": 40,
+              "EndOffset": 42,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 26
+            }
+          ]
+        },
+        "System.Void Sluggy.CompositeStrategy::.ctor(Sluggy.ITranslationStrategy[])": {
+          "Lines": {
+            "10": 1,
+            "11": 1,
+            "12": 1
+          },
+          "Branches": []
+        },
+        "System.Void Sluggy.CompositeStrategy::.ctor(System.Collections.Generic.IEnumerable`1<Sluggy.ITranslationStrategy>)": {
+          "Lines": {
+            "14": 1,
+            "15": 1,
+            "16": 1,
+            "17": 1
+          },
+          "Branches": []
+        }
+      }
+    },
+    "C:\\Users\\ruben\\Documents\\13_Programming\\Projects\\sluggy\\Sluggy\\NormalizationStrategy.cs": {
+      "Sluggy.NormalizationStrategy": {
+        "System.String Sluggy.NormalizationStrategy::Translate(System.String)": {
+          "Lines": {
+            "9": 26,
+            "10": 26,
+            "11": 26,
+            "12": 117
+          },
+          "Branches": [
+            {
+              "Line": 9,
+              "Offset": 13,
+              "EndOffset": 15,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 1
+            },
+            {
+              "Line": 9,
+              "Offset": 13,
+              "EndOffset": 38,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 26
+            }
+          ]
+        }
+      }
+    },
+    "C:\\Users\\ruben\\Documents\\13_Programming\\Projects\\sluggy\\Sluggy\\Sluggy.cs": {
+      "Sluggy.Sluggy": {
+        "System.String Sluggy.Sluggy::ToSlug(System.String)": {
+          "Lines": {
+            "15": 6,
+            "16": 6,
+            "17": 5
+          },
+          "Branches": []
+        },
+        "System.String Sluggy.Sluggy::ToSlug(System.String,System.String)": {
+          "Lines": {
+            "20": 2,
+            "21": 2,
+            "22": 2
+          },
+          "Branches": []
+        },
+        "System.String Sluggy.Sluggy::ToSlug(System.String,Sluggy.ITranslationStrategy)": {
+          "Lines": {
+            "25": 3,
+            "26": 3,
+            "27": 3
+          },
+          "Branches": []
+        },
+        "System.String Sluggy.Sluggy::ToSlug(System.String,System.String,Sluggy.ITranslationStrategy)": {
+          "Lines": {
+            "30": 11,
+            "31": 11,
+            "32": 1,
+            "33": 1,
+            "36": 10,
+            "37": 10,
+            "38": 53,
+            "39": 45,
+            "40": 45,
+            "41": 10,
+            "42": 10
+          },
+          "Branches": [
+            {
+              "Line": 31,
+              "Offset": 20,
+              "EndOffset": 22,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 1
+            },
+            {
+              "Line": 31,
+              "Offset": 20,
+              "EndOffset": 34,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 10
+            },
+            {
+              "Line": 36,
+              "Offset": 51,
+              "EndOffset": 53,
+              "Path": 0,
+              "Ordinal": 2,
+              "Hits": 1
+            },
+            {
+              "Line": 36,
+              "Offset": 51,
+              "EndOffset": 76,
+              "Path": 1,
+              "Ordinal": 3,
+              "Hits": 10
+            },
+            {
+              "Line": 36,
+              "Offset": 87,
+              "EndOffset": 89,
+              "Path": 0,
+              "Ordinal": 4,
+              "Hits": 1
+            },
+            {
+              "Line": 36,
+              "Offset": 87,
+              "EndOffset": 112,
+              "Path": 1,
+              "Ordinal": 5,
+              "Hits": 10
+            }
+          ]
+        },
+        "System.String Sluggy.Sluggy::Join(System.Collections.Generic.IEnumerable`1<System.String>,System.String)": {
+          "Lines": {
+            "45": 10,
+            "46": 10,
+            "47": 10
+          },
+          "Branches": []
+        },
+        "System.Void Sluggy.Sluggy::.cctor()": {
+          "Lines": {
+            "9": 1,
+            "11": 1,
+            "12": 1
+          },
+          "Branches": []
+        }
+      }
+    }
+  }
+}
