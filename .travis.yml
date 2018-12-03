@@ -8,4 +8,5 @@ install:
   - dotnet restore
 script:
   - dotnet build
-  - dotnet test
+  - dotnet test Sluggy.Tests/Sluggy.Tests.csproj
+  - dotnet test SluggyUnidecode.Tests/SluggyUnidecode.Tests.csproj

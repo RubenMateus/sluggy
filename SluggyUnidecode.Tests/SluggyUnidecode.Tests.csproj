@@ -15,5 +15,4 @@
   <ItemGroup>
     <ProjectReference Include="..\SluggyUnidecode\SluggyUnidecode.csproj" />
   </ItemGroup>
-
 </Project>
