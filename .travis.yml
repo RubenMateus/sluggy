@@ -6,10 +6,7 @@ mono: none
 dotnet: 2.1.300
 install:
   - dotnet restore
-  - nuget restore Sluggy.sln
-  - nuget install xunit.runners -Version 1.9.2 -OutputDirectory testrunner
 script:
   - dotnet build
   - dotnet test Sluggy.Tests/Sluggy.Tests.csproj
   - dotnet test SluggyUnidecode.Tests/SluggyUnidecode.Tests.csproj
-  - xbuild /p:Configuration=Release Sluggy.sln
