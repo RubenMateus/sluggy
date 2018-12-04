@@ -11,6 +11,5 @@ namespace SluggyUnidecode
         {
             return text.ToSlug(UnidecodeStrategy);
         }
-
     }
 }
