@@ -2,3 +2,4 @@
 [![NuGet](https://img.shields.io/nuget/v/Sluggy.svg)](https://www.nuget.org/packages/Sluggy/)
 [![NuGet](https://img.shields.io/nuget/v/SluggyUnidecode.svg)](https://www.nuget.org/packages/SluggyUnidecode/)
 [![CodeFactor](https://www.codefactor.io/repository/github/rubenmateus/sluggy/badge)](https://www.codefactor.io/repository/github/rubenmateus/sluggy)
+[![codecov](https://codecov.io/gh/RubenMateus/sluggy/branch/master/graph/badge.svg)](https://codecov.io/gh/RubenMateus/sluggy)
