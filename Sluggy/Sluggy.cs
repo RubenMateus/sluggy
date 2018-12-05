@@ -9,6 +9,7 @@ namespace Sluggy
         public static readonly string DefaultSeparator = "-";
 
         public static readonly ITranslationStrategy DefaultTranslationStrategy = new CompositeStrategy(
+            new ToLowerInvariantStrategy(),
             new NormalizationStrategy());
 
         public static string ToSlug(this string text)
@@ -36,7 +37,6 @@ namespace Sluggy
             return text
                 .Split()
                 .Where(t => t.Length != 0)
-                .Select(t => t.ToLowerInvariant())
                 .Select(t => strategy.Translate(t))
                 .Join(separator);
         }
