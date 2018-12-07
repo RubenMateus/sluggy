@@ -1,4 +1,4 @@
-[![Codacy Badge](https://api.codacy.com/project/badge/Grade/5552e1e120354392b5f45aec8831d3b8)](https://app.codacy.com/app/RubenMateus/sluggy?utm_source=github.com&utm_medium=referral&utm_content=RubenMateus/sluggy&utm_campaign=Badge_Grade_Settings)
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/5bef1cba89334d849c478b18d4c54a04)](https://www.codacy.com/app/RubenMateus/sluggy?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=RubenMateus/sluggy&amp;utm_campaign=Badge_Grade)
 [![Build Status](https://travis-ci.org/RubenMateus/sluggy.svg?branch=master)](https://travis-ci.org/RubenMateus/sluggy)
 [![NuGet](https://img.shields.io/nuget/v/Sluggy.svg)](https://www.nuget.org/packages/Sluggy/)
 [![NuGet](https://img.shields.io/nuget/v/SluggyUnidecode.svg)](https://www.nuget.org/packages/SluggyUnidecode/)
