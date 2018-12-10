@@ -6,7 +6,8 @@ namespace Sluggy.Tests
 {
     public class CompositionStrategyTests
     {
-        [Fact]
+        [Trait("Project", "Sluggy")]
+        [Fact(DisplayName = "Should Maintain the Strategies Order")]
         public void MaintainsOrder()
         {
             const int numberOfStrategies = 30;
@@ -14,7 +15,8 @@ namespace Sluggy.Tests
 
             var strategies = Enumerable
                 .Repeat(0, numberOfStrategies)
-                .Select((t, index) => {
+                .Select((t, index) =>
+                {
                     var mock = new Mock<ITranslationStrategy>();
                     var indexString = index.ToString();
 
@@ -37,7 +39,8 @@ namespace Sluggy.Tests
             }
         }
 
-        [Fact]
+        [Trait("Project", "Sluggy")]
+        [Fact(DisplayName = "Should Execute All Strategies")]
         public void AllStrategiesAreExecuted()
         {
             const int numberOfStrategies = 30;
