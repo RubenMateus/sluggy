@@ -9,7 +9,7 @@ namespace Sluggy
     {
         public string Translate(string text)
         {
-            if (text == null) 
+            if (text == null)
             {
                 throw new ArgumentNullException(nameof(text));
             }
