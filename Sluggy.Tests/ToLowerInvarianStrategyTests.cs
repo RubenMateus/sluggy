@@ -23,6 +23,7 @@ namespace Sluggy.Tests
         public void ShouldThrowNullArgumentException()
         {
             const string cena = null;
+
             var strategy = new ToLowerInvariantStrategy();
 
             Assert.Throws<ArgumentNullException>(() => strategy.Translate(cena));
