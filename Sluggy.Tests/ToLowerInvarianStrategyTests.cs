@@ -9,6 +9,7 @@ namespace Sluggy.Tests
         [Theory(DisplayName = "Should LowerCase With InvariantCulture")]
         [InlineData("AbcDEf", "abcdef")]
         [InlineData("GHIJKL", "ghijkl")]
+        [InlineData("", "")]
         public void ShouldLowerCaseWithInvariantCulture(string value, string expectation)
         {
             var strategy = new ToLowerInvariantStrategy();

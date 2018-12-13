@@ -9,6 +9,7 @@ namespace Sluggy.Tests
         [Theory(DisplayName = "Should Normalize string")]
         [InlineData("áãâàóôòõêè", "aaaaooooee")]
         [InlineData("ä ö ű ő", "a o u o")]
+        [InlineData("", "")]
         public void ShouldNormalize(string value, string expectation)
         {
             var strategy = new NormalizationStrategy();

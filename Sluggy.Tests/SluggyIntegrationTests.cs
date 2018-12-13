@@ -8,6 +8,7 @@ namespace Sluggy.Tests
         [Theory(DisplayName = "Should Use Separator")]
         [InlineData("EU GOSTO DE TÁRTE", "euAgostoAdeAtarte", "A")]
         [InlineData("EU GOSTO", "euBananagosto", "Banana")]
+        [InlineData("", "", "")]
         public void ShouldUseSeparator(string value, string expectation, string separator)
         {
             var result = value.ToSlug(separator);
