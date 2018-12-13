@@ -22,10 +22,11 @@ namespace Sluggy.Tests
         [Fact(DisplayName = "NormalizationStrategy Should Throw NullArgumentException")]
         public void ShouldThrowNullArgumentException()
         {
-            const string cena = null;
+            const string text = null;
+
             var strategy = new NormalizationStrategy();
 
-            Assert.Throws<ArgumentNullException>(() => strategy.Translate(cena));
+            Assert.Throws<ArgumentNullException>(() => strategy.Translate(text));
         }
     }
 }
