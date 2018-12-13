@@ -2,9 +2,7 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
-    <Description>SluggyUnidecode is a powerful slugifier designed to create friendly URL's. 
-
-With crazy support.
+    <Description>SluggyUnidecode is a powerful slugifier designed to create friendly URL's. Simple and powerful.
 Extends the Sluggy package by using the Unidecode.Net library for normalization.</Description>
     <Authors>Ruben Mateus</Authors>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
@@ -13,11 +11,14 @@ Extends the Sluggy package by using the Unidecode.Net library for normalization.
     <RepositoryUrl>https://github.com/RubenMateus/sluggy</RepositoryUrl>
     <RepositoryType>Library</RepositoryType>
     <PackageTags>slug simple normalization url friendly generator normalizer urls slugs unidecode</PackageTags>
-    <PackageReleaseNotes>First Release with .NET Standard 2.0 support.</PackageReleaseNotes>
+    <PackageReleaseNotes># Upgraded sluggy version to 2.0.0
+# Minor tweaks and clean -&gt; stylecop
+# Added tests for the unidecode normalization strategy</PackageReleaseNotes>
+    <Version>1.1.0</Version>
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Sluggy" Version="1.0.1" />
+    <PackageReference Include="Sluggy" Version="2.0.0" />
     <PackageReference Include="Unidecode.NET" Version="1.3.0" />
   </ItemGroup>
 
