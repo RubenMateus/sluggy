@@ -18,12 +18,14 @@ namespace Sluggy
 
         public string Translate(string text)
         {
+            var translated = text;
+
             foreach (var curr in _strategies)
             {
-                text = curr.Translate(text);
+                translated = curr.Translate(translated);
             }
 
-            return text;
+            return translated;
         }
     }
 }
