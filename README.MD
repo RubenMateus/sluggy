@@ -29,6 +29,10 @@ SluggyUnidecode is simple and powerful.
 Extends the Sluggy package by using the Unidecode.Net library for normalization.
 
 
+wip...
+
+
+
 
 
 ## Contributing
