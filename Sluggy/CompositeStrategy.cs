@@ -22,7 +22,7 @@ namespace Sluggy
 
             foreach (var curr in _strategies)
             {
-                translated = curr.Translate(text);
+                translated = curr.Translate(translated);
             }
 
             return translated;
