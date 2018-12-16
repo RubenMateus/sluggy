@@ -6,6 +6,7 @@
 Extends the Sluggy package by using the Unidecode.Net library for normalization.</Description>
     <Authors>Ruben Mateus</Authors>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
     <Copyright>Copyright (c) 2018 Ruben Mateus</Copyright>
     <PackageLicenseUrl>https://raw.githubusercontent.com/RubenMateus/sluggy/master/LICENSE</PackageLicenseUrl>
     <RepositoryUrl>https://github.com/RubenMateus/sluggy</RepositoryUrl>

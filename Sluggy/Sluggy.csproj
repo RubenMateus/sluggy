@@ -6,6 +6,7 @@
     <PackageId>Sluggy</PackageId>
     <Company></Company>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
     <PackageLicenseUrl>https://raw.githubusercontent.com/RubenMateus/sluggy/master/LICENSE</PackageLicenseUrl>
     <PackageProjectUrl />
     <RepositoryUrl>https://github.com/RubenMateus/sluggy</RepositoryUrl>
