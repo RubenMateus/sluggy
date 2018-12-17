@@ -11,7 +11,8 @@ namespace Sluggy
         ///
         /// </summary>
         /// <param name="text">The text to be translated</param>
-        /// <returns>The translated text with toLowerInvariant method</returns>
+        /// <returns>The translated text with toLowerInvariant</returns>
+        /// <exception cref="ArgumentNullException">Thrown when text is null</exception>
         public string Translate(string text)
         {
             if (text == null)

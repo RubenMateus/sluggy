@@ -3,7 +3,7 @@
 namespace Sluggy
 {
     /// <summary>
-    ///
+    /// The composite strategy to agreggate all the different ITranslationStrategies
     /// </summary>
     public class CompositeStrategy : ITranslationStrategy
     {
@@ -12,7 +12,7 @@ namespace Sluggy
         /// <summary>
         ///
         /// </summary>
-        /// <param name="strategies"></param>
+        /// <param name="strategies">The different types of strategies to be used</param>
         public CompositeStrategy(params ITranslationStrategy[] strategies)
             : this((IEnumerable<ITranslationStrategy>)strategies)
         {
@@ -21,7 +21,7 @@ namespace Sluggy
         /// <summary>
         ///
         /// </summary>
-        /// <param name="strategies"></param>
+        /// <param name="strategies">The different types of strategies to be used</param>
         public CompositeStrategy(IEnumerable<ITranslationStrategy> strategies)
         {
             _strategies = strategies;
