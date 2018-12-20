@@ -7,10 +7,10 @@
     public interface ITranslationStrategy
     {
         /// <summary>
-        ///
+        /// Translates the text with the specific strategy.
         /// </summary>
-        /// <param name="text">The text to be translated</param>
-        /// <returns>The specific strategy translated text</returns>
+        /// <param name="text">The text to be translated.</param>
+        /// <returns>The specific strategy translated text.</returns>
         string Translate(string text);
     }
 }

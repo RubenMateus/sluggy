@@ -6,7 +6,7 @@ namespace Sluggy
 {
     /// <summary>
     /// Exposes the toSlug extension method, gives support to
-    /// transform regular strings into friendly urls
+    /// transform regular strings into friendly urls.
     /// </summary>
     public static class Sluggy
     {
