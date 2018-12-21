@@ -25,10 +25,36 @@ Sluggy is a configuration based class library designed to create friendly URL's.
 `dotnet add package SluggyUnidecode --version 1.1.0`
 
 SluggyUnidecode is simple and powerful.
-Extends the Sluggy package by using the Unidecode.Net library for normalization.
+Extends the Sluggy package by using the Unidecode.NET library for normalization.
 
+---
+## QuickStart
 
-wip...
+``` csharp
+using Sluggy;
+
+"EU GOSTO DE TÁRTE".ToSlug();
+// Output: "eu-gosto-de-tarte"
+
+"Eu NãO GoStO de PãO Da Avó".ToSlug();
+// Output: "eu-nao-gosto-de-pao-da-avo"
+```
+
+### You can also pass arguments, there are 3 more overloads for ToSlug
+
+``` csharp
+using Sluggy;
+
+// Defining the separator
+var separator = "/";
+
+"EU GOSTO DE TÁRTE".ToSlug(separator);
+// Output: "eu/gosto/de/tarte"
+
+"Eu NãO GoStO de PãO Da Avó".ToSlug(separator);
+// Output: "eu/nao/gosto/de/pao/da/avo"
+``` 
+---
 
 ## Contributing
 
