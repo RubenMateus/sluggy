@@ -125,11 +125,11 @@ using SluggyUnidecode;
 
 ## Contributing
 
-Any contribution is allowed, submit a issue or pull request to start contributing your ideias or problems.
+Any contribution is allowed, submit a issue or pull request to start contributing your ideias or problems you encounter.
 
 ## Authors
 
-  - **Ruben Mateus** - [rubenmateus](https://github.com/rubenmateus)
+- **Ruben Mateus** - [rubenmateus](https://github.com/rubenmateus)
 
 See also the list of [contributors](https://github.com/rubenmateus/sluggy/graphs/contributors) who participated in this project.
 
@@ -139,4 +139,4 @@ This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md
 
 ## Acknowledgments
 
-  - To **Sérgio Freitas**[[sj-freitas](https://github.com/sj-freitas)] for the idea, challenge and guidance.
+- To **Sérgio Freitas**[[sj-freitas](https://github.com/sj-freitas)] for the idea, challenge and guidance.
