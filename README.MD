@@ -61,8 +61,8 @@ var separator = "/";
 ---
 
 ### You can redefine the default composite strategy by passing as a param.
-##### The default is *new CompositeStrategy(new ToLowerInvariantStrategy(), new NormalizationStrategy())*.
-##### _Default separator is "-"_.
+#### The default is *new CompositeStrategy(new ToLowerInvariantStrategy(), new NormalizationStrategy())*.
+#### _Default separator is "-"_.
 
 ``` csharp
 using Sluggy;
@@ -85,8 +85,8 @@ var anotherStrategy = new CompositeStrategy(new ToLowerInvariantStrategy(), new 
 ---
 
 ### And lastly you can redefine the default separator and the composite strategy.
-##### The default is *new CompositeStrategy(new ToLowerInvariantStrategy(), new NormalizationStrategy())*.
-##### _Default separator is "-"_.
+#### The default is *new CompositeStrategy(new ToLowerInvariantStrategy(), new NormalizationStrategy())*.
+#### _Default separator is "-"_.
 
 ``` csharp
 using Sluggy;
@@ -108,7 +108,7 @@ var anotherStrategy = new CompositeStrategy(new ToLowerInvariantStrategy(), new 
 ``` 
 ---
 ## QuickStart with SluggyUnidecode
-SluggyUnidecode is simple and uses a powerful normalizer to ASCII.
+SluggyUnidecode is simple and uses a powerful normalizer to ASCII characters.
 ``` csharp
 using SluggyUnidecode;
 
