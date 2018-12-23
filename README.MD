@@ -28,10 +28,10 @@ SluggyUnidecode is simple and powerful.
 Extends the Sluggy package by using the Unidecode.NET library for normalization.
 
 ---
-## QuickStart with Sluggy.
+## QuickStart with Sluggy
 ### **There are 4 ways to use ToSlug()**
 #### The default is *new CompositeStrategy(new ToLowerInvariantStrategy(), new NormalizationStrategy())*
-#### _Default separator is "-"_
+#### *Default separator is "-"*
 
 Easiest way:
 ``` csharp
@@ -124,21 +124,22 @@ using SluggyUnidecode;
 
 ## Contributing
 
-Any contribution is allowed, submit a issue or pull request to start contributing your ideias 
-or problems you encounter.
+Any contribution is allowed, submit a issue or pull request 
+to start contributing your ideias or problems you encounter.
 
 ## Authors
 
-- **Ruben Mateus** - [rubenmateus](https://github.com/rubenmateus)
+  - **Ruben Mateus** - [rubenmateus](https://github.com/rubenmateus)
 
 See also the list of [contributors](https://github.com/rubenmateus/sluggy/graphs/contributors)
  who participated in this project.
 
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details.
+This project is licensed under the MIT License - 
+see the [LICENSE.md](LICENSE.md) file for details.
 
 ## Acknowledgments
 
-- To **Sérgio Freitas**[[sj-freitas](https://github.com/sj-freitas)] for the idea, 
-challenge and guidance.
+  - To **Sérgio Freitas**[[sj-freitas](https://github.com/sj-freitas)] 
+for the idea, challenge and guidance.
