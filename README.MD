@@ -92,7 +92,7 @@ var anotherStrategy = new CompositeStrategy(
 
 "GOSTO DE TÁRTE".ToSlug(anotherStrategy);
 // Output: "gst-d-trt"
-``` 
+```
 
 ---
 
@@ -145,7 +145,7 @@ using SluggyUnidecode;
 
 ## Contributing
 
-Any contribution is allowed, submit a issue or pull request 
+Any contribution is allowed, submit a issue or pull request
 to start contributing your ideias or problems you encounter.
 
 ## Authors
@@ -157,7 +157,7 @@ See also the list of [contributors](https://github.com/rubenmateus/sluggy/graphs
 
 ## License
 
-This project is licensed under the MIT License - 
+This project is licensed under the MIT License -
 see the [LICENSE.md](LICENSE.md) file for details.
 
 ## Acknowledgments
