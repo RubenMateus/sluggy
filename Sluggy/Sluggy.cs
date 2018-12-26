@@ -10,7 +10,10 @@ namespace Sluggy
     /// </summary>
     public static class Sluggy
     {
-        private const string DefaultSeparator = "-";
+        /// <summary>
+        /// The Default separator used by Sluggy
+        /// </summary>
+        public const string DefaultSeparator = "-";
 
         /// <summary>
         /// The DefaultTranslationStrategy which aggregates the

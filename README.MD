@@ -28,12 +28,17 @@ SluggyUnidecode is simple and powerful.
 Extends the Sluggy package by using the Unidecode.NET library for normalization.
 
 ---
+
 ## QuickStart with Sluggy
+
 ### **There are 4 ways to use ToSlug()**
+
 #### The default is *new CompositeStrategy(new ToLowerInvariantStrategy(), new NormalizationStrategy())*
+
 #### *Default separator is "-"*
 
 Easiest way:
+
 ``` csharp
 using Sluggy;
 
@@ -45,6 +50,7 @@ using Sluggy;
 ```
 
 ---
+
 ### You can redefine the separator
 
 ``` csharp
@@ -58,7 +64,8 @@ var separator = "/";
 
 "Eu NãO GoStO de PãO Da Avó".ToSlug(separator);
 // Output: "eu/nao/gosto/de/pao/da/avo"
-``` 
+```
+
 ---
 
 ### You can redefine the default composite strategy by passing as a param
@@ -67,7 +74,9 @@ var separator = "/";
 using Sluggy;
 
 // Defining the composite strategy
-var defaultStrategy = new CompositeStrategy(new ToLowerInvariantStrategy(), new NormalizationStrategy());
+var defaultStrategy = new CompositeStrategy(
+    new ToLowerInvariantStrategy(),
+    new NormalizationStrategy());
 
 "EU GOSTO DE TÁRTE".ToSlug(defaultStrategy);
 // Output: "eu-gosto-de-tarte"
@@ -76,11 +85,15 @@ var defaultStrategy = new CompositeStrategy(new ToLowerInvariantStrategy(), new 
 // Output: "eu-nao-gosto-de-pao-da-avo"
 
 // Redefine the composite strategy
-var anotherStrategy = new CompositeStrategy(new ToLowerInvariantStrategy(), new NormalizationStrategy(), new RemoveEveryVowelStrategy());
+var anotherStrategy = new CompositeStrategy(
+    new ToLowerInvariantStrategy(),
+    new NormalizationStrategy(),
+    new RemoveEveryVowelStrategy());
 
 "GOSTO DE TÁRTE".ToSlug(anotherStrategy);
 // Output: "gst-d-trt"
 ``` 
+
 ---
 
 ### And lastly you can redefine the default separator and the composite strategy
@@ -92,22 +105,30 @@ using Sluggy;
 var separator = "/";
 
 // Defining the composite strategy
-var normalizationWithUpperCaseStrategy = new CompositeStrategy(new ToUpperCaseStrategy(), 
-new NormalizationStrategy());
+
+var normalizationWithUpperCaseStrategy = new CompositeStrategy(
+    new ToUpperCaseStrategy(),
+    new NormalizationStrategy());
 
 "EU GOSTO DE TÁRTE".ToSlug(separator, normalizationWithUpperCaseStrategy);
 // Output: "EU/GOSTO/DE/TARTE"
 
 // Redefine the composite strategy
-var anotherStrategy = new CompositeStrategy(new ToLowerInvariantStrategy(), 
-new NormalizationStrategy(), new RemoveEveryVowelStrategy());
+var anotherStrategy = new CompositeStrategy(
+    new ToLowerInvariantStrategy(),
+    new NormalizationStrategy(),
+    new RemoveEveryVowelStrategy());
 
 "GOSTO DE TÁRTE".ToSlug(separator, anotherStrategy);
 // Output: "gst/d/trt"
-``` 
+```
+
 ---
+
 ## QuickStart with SluggyUnidecode
+
 SluggyUnidecode is simple and uses a powerful normalizer to ASCII characters.
+
 ``` csharp
 using SluggyUnidecode;
 
@@ -128,7 +149,7 @@ Any contribution is allowed, submit a issue or pull request
 to start contributing your ideias or problems you encounter.
 
 ## Authors
- 
+
 - **Ruben Mateus** - [rubenmateus](https://github.com/rubenmateus)
 
 See also the list of [contributors](https://github.com/rubenmateus/sluggy/graphs/contributors)
@@ -141,5 +162,5 @@ see the [LICENSE.md](LICENSE.md) file for details.
 
 ## Acknowledgments
 
-- To **Sérgio Freitas**[[sj-freitas](https://github.com/sj-freitas)] 
-for the idea, challenge and guidance.
+- To **Sérgio Freitas**[[sj-freitas](https://github.com/sj-freitas)]
+  for the idea, challenge and guidance.

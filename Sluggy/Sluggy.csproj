@@ -18,9 +18,11 @@ With crazy support out of the box, but fully configurable.</Description>
     <PackageReleaseNotes># Changed the casing strategy to be configurable, default is toLowerInvariant.
 # Added missing tests for strategies.
 # Minor tweaks and cleanup to style.
+# Updated documentation.
+# Updated Icon.
 </PackageReleaseNotes>
     <RepositoryType>Library</RepositoryType>
-    <Version>2.0.0</Version>
+    <Version>2.0.1</Version>
   </PropertyGroup>
 
 </Project>
