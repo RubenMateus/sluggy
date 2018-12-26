@@ -11,9 +11,9 @@ namespace Sluggy
     public static class Sluggy
     {
         /// <summary>
-        /// The Default separator used by Sluggy
+        /// The default separator used by Sluggy.
         /// </summary>
-        public const string DefaultSeparator = "-";
+        public static readonly string DefaultSeparator = "-";
 
         /// <summary>
         /// The DefaultTranslationStrategy which aggregates the
