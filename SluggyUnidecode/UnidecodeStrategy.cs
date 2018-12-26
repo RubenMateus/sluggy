@@ -1,5 +1,5 @@
-﻿using Sluggy;
-using System;
+﻿using System;
+using Sluggy;
 using Unidecode.NET;
 
 namespace SluggyUnidecode
@@ -15,6 +15,7 @@ namespace SluggyUnidecode
         /// </summary>
         /// <param name="text">The text to be translated</param>
         /// <returns>The translated text with the Unidecode.NET</returns>
+        /// <exception cref="ArgumentNullException">Thrown when text is null.</exception>
         public string Translate(string text)
         {
             if (text == null)
