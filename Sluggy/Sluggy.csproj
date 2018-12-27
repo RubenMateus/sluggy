@@ -23,6 +23,7 @@ With crazy support out of the box, but fully configurable.</Description>
 </PackageReleaseNotes>
     <RepositoryType>Library</RepositoryType>
     <Version>2.0.1</Version>
+    <PackageIconUrl>https://raw.githubusercontent.com/RubenMateus/sluggy/master/sluggy.png</PackageIconUrl>
   </PropertyGroup>
 
 </Project>

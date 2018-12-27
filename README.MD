@@ -1,4 +1,9 @@
-# Sluggy && SluggyUnidecode
+# Sluggy | SluggyUnidecode
+
+![sluggy](https://raw.githubusercontent.com/RubenMateus/sluggy/master/sluggy.png)
+![sluggyUnidecode](https://raw.githubusercontent.com/RubenMateus/sluggy/master/sluggyUnidecode.png)
+
+---
 
 [![Build Status](https://travis-ci.org/RubenMateus/sluggy.svg?branch=master)](https://travis-ci.org/RubenMateus/sluggy)
 [![codecov](https://codecov.io/gh/RubenMateus/sluggy/branch/master/graph/badge.svg)](https://codecov.io/gh/RubenMateus/sluggy)
@@ -22,7 +27,7 @@ Sluggy is a configuration based class library designed to create friendly URL's.
 
 [![NuGet](https://img.shields.io/nuget/v/SluggyUnidecode.svg)](https://www.nuget.org/packages/SluggyUnidecode/)
 
-`dotnet add package SluggyUnidecode --version 1.1.1`
+`dotnet add package SluggyUnidecode --version 1.1.2`
 
 SluggyUnidecode is simple and powerful.
 Extends the Sluggy package by using the Unidecode.NET library for normalization.
@@ -163,4 +168,4 @@ see the [LICENSE.md](LICENSE.md) file for details.
 ## Acknowledgments
 
 - To **Sérgio Freitas**[[sj-freitas](https://github.com/sj-freitas)]
-  for the idea, challenge and guidance.
+  for the idea, challenge, guidance and the amazing logo designs.
