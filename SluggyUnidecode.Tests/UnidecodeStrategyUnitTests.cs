@@ -1,4 +1,5 @@
-﻿using Xunit;
+﻿using System;
+using Xunit;
 
 namespace SluggyUnidecode.Tests
 {
@@ -18,6 +19,17 @@ namespace SluggyUnidecode.Tests
             var translated = strategy.Translate(value);
 
             Assert.Equal(expectation, translated);
+        }
+
+        [Trait("Project", "SluggyUnidecode")]
+        [Fact(DisplayName = "UnidecodeStrategy Should Throw ArgumentNullException")]
+        public void ShouldThrowNullArgumentException()
+        {
+            const string text = null;
+
+            var strategy = new UnidecodeStrategy();
+
+            Assert.Throws<ArgumentNullException>(() => strategy.Translate(text));
         }
     }
 }

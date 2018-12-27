@@ -1,5 +1,5 @@
-using System;
 using Moq;
+using System;
 using Xunit;
 
 namespace Sluggy.Tests
@@ -7,7 +7,7 @@ namespace Sluggy.Tests
     public class SluggyUnitTests
     {
         [Trait("Project", "Sluggy")]
-        [Fact(DisplayName = "ToSlug Should Throw NullArgumentException")]
+        [Fact(DisplayName = "ToSlug Should Throw ArgumentNullException")]
         public void ShouldThrowNullArgumentException()
         {
             const string text = null;

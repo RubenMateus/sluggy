@@ -20,7 +20,7 @@ namespace Sluggy.Tests
         }
 
         [Trait("Project", "Sluggy")]
-        [Fact(DisplayName = "ToLowerInvariantStrategy Should Throw NullArgumentException")]
+        [Fact(DisplayName = "ToLowerInvariantStrategy Should Throw ArgumentNullException")]
         public void ShouldThrowNullArgumentException()
         {
             const string text = null;

@@ -20,7 +20,7 @@ namespace Sluggy.Tests
         }
 
         [Trait("Project", "Sluggy")]
-        [Fact(DisplayName = "NormalizationStrategy Should Throw NullArgumentException")]
+        [Fact(DisplayName = "NormalizationStrategy Should Throw ArgumentNullException")]
         public void ShouldThrowNullArgumentException()
         {
             const string text = null;

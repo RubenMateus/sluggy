@@ -6,6 +6,7 @@
 Extends the Sluggy package by using the Unidecode.Net library for normalization.</Description>
     <Authors>Ruben Mateus</Authors>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
     <Copyright>Copyright (c) 2018 Ruben Mateus</Copyright>
     <PackageLicenseUrl>https://raw.githubusercontent.com/RubenMateus/sluggy/master/LICENSE</PackageLicenseUrl>
     <RepositoryUrl>https://github.com/RubenMateus/sluggy</RepositoryUrl>
@@ -13,8 +14,10 @@ Extends the Sluggy package by using the Unidecode.Net library for normalization.
     <PackageTags>slug simple normalization url friendly generator normalizer urls slugs unidecode</PackageTags>
     <PackageReleaseNotes># Upgraded sluggy version to 2.0.0
 # Minor tweaks and clean -&gt; stylecop
-# Added tests for the unidecode normalization strategy</PackageReleaseNotes>
-    <Version>1.1.0</Version>
+# Added tests for the unidecode normalization strategy
+# Updated documentation
+# Updated Icon.</PackageReleaseNotes>
+    <Version>1.1.1</Version>
   </PropertyGroup>
 
   <ItemGroup>
