@@ -17,7 +17,7 @@ Extends the Sluggy package by using the Unidecode.Net library for normalization.
 # Added tests for the unidecode normalization strategy
 # Updated documentation
 # Updated Icon.</PackageReleaseNotes>
-    <Version>1.1.1</Version>
+    <Version>1.1.2</Version>
     <PackageIconUrl>https://raw.githubusercontent.com/RubenMateus/sluggy/master/sluggyUnidecode.png</PackageIconUrl>
   </PropertyGroup>
 
