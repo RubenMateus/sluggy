@@ -12,7 +12,7 @@
 
 [![NuGet](https://img.shields.io/nuget/v/Sluggy.svg)](https://www.nuget.org/packages/Sluggy/)
 
-`dotnet add package Sluggy --version 2.0.0`
+`dotnet add package Sluggy --version 2.0.1`
 
 Sluggy is a configuration based class library designed to create friendly URL's.
 
@@ -22,7 +22,7 @@ Sluggy is a configuration based class library designed to create friendly URL's.
 
 [![NuGet](https://img.shields.io/nuget/v/SluggyUnidecode.svg)](https://www.nuget.org/packages/SluggyUnidecode/)
 
-`dotnet add package SluggyUnidecode --version 1.1.0`
+`dotnet add package SluggyUnidecode --version 1.1.1`
 
 SluggyUnidecode is simple and powerful.
 Extends the Sluggy package by using the Unidecode.NET library for normalization.
