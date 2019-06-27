@@ -7,7 +7,7 @@
     <Company></Company>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
-    <PackageLicenseUrl>https://raw.githubusercontent.com/RubenMateus/sluggy/master/LICENSE</PackageLicenseUrl>
+    <PackageLicenseUrl></PackageLicenseUrl>
     <PackageProjectUrl />
     <RepositoryUrl>https://github.com/RubenMateus/sluggy</RepositoryUrl>
     <Copyright>Copyright (c) 2018 Ruben Mateus</Copyright>
@@ -15,15 +15,13 @@
     <Description>Sluggy is a configuration based class library designed to create friendly URL's. 
 
 With crazy support out of the box, but fully configurable.</Description>
-    <PackageReleaseNotes># Changed the casing strategy to be configurable, default is toLowerInvariant.
-# Added missing tests for strategies.
-# Minor tweaks and cleanup to style.
-# Updated documentation.
-# Updated Icon.
-</PackageReleaseNotes>
+    <PackageReleaseNotes># Updated package dependencies</PackageReleaseNotes>
     <RepositoryType>Library</RepositoryType>
-    <Version>2.0.1</Version>
+    <Version>2.0.2</Version>
     <PackageIconUrl>https://raw.githubusercontent.com/RubenMateus/sluggy/master/sluggy.png</PackageIconUrl>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <AssemblyVersion>2.0.2.0</AssemblyVersion>
+    <FileVersion>2.0.2.0</FileVersion>
   </PropertyGroup>
 
 </Project>
