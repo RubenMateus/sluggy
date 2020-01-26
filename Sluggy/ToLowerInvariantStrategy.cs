@@ -20,7 +20,7 @@ namespace Sluggy
                 throw new ArgumentNullException(nameof(text));
             }
 
-            return text.ToLowerInvariant();
+            return text.Replace("İ", "I").Replace("ı", "i").ToLowerInvariant();
         }
     }
 }

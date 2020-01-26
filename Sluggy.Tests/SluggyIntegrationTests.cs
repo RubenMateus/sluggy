@@ -22,6 +22,10 @@ namespace Sluggy.Tests
         [InlineData("eu gosto de tarte        das", "eu-gosto-de-tarte-das")]
         [InlineData("eu gosto de tarte", "eu-gosto-de-tarte")]
         [InlineData("eu não gosto de pão da avó", "eu-nao-gosto-de-pao-da-avo")]
+        [InlineData("FAZLA ÇİKOLATA YEMEK DİŞ SAĞLIĞINI BOZABİLİR", "fazla-cikolata-yemek-dis-sagligini-bozabilir")]
+        [InlineData("Fazla çikolata yemek diş sağlığını bozabilir", "fazla-cikolata-yemek-dis-sagligini-bozabilir")]
+        [InlineData("PİJAMALI HASTA YAĞIZ ŞOFÖRE ÇABUCAK GÜVENDİ", "pijamali-hasta-yagiz-sofore-cabucak-guvendi")]
+        [InlineData("pijamalı hasta yağız şoföre çabucak güvendi", "pijamali-hasta-yagiz-sofore-cabucak-guvendi")]
         [InlineData("", "")]
         public void ShouldConvertToSlug(string value, string expectation)
         {

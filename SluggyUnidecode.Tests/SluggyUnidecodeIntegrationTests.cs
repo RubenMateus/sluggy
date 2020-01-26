@@ -14,6 +14,10 @@ namespace SluggyUnidecode.Tests
         [InlineData("Работа с кириллицей", "rabota-s-kirillitsey")]
         [InlineData("Мне нравится татарин", "mne-nravitsya-tatarin")]
         [InlineData("ch\u00e2teau Vi\u00f1edos", "chateau-vinedos")]
+        [InlineData("FAZLA ÇİKOLATA YEMEK DİŞ SAĞLIĞINI BOZABİLİR", "fazla-cikolata-yemek-dis-sagligini-bozabilir")]
+        [InlineData("Fazla çikolata yemek diş sağlığını bozabilir", "fazla-cikolata-yemek-dis-sagligini-bozabilir")]
+        [InlineData("PİJAMALI HASTA YAĞIZ ŞOFÖRE ÇABUCAK GÜVENDİ", "pijamali-hasta-yagiz-sofore-cabucak-guvendi")]
+        [InlineData("pijamalı hasta yağız şoföre çabucak güvendi", "pijamali-hasta-yagiz-sofore-cabucak-guvendi")]
         [InlineData("", "")]
         public void ShouldConvertToSlugWithUnidecode(string value, string expectation)
         {
