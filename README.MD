@@ -2,6 +2,7 @@
 
 ![sluggy](https://raw.githubusercontent.com/RubenMateus/sluggy/master/sluggy.png)
 ![sluggyUnidecode](https://raw.githubusercontent.com/RubenMateus/sluggy/master/sluggyUnidecode.png)
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2FRubenMateus%2Fsluggy.svg?type=shield)](https://app.fossa.io/projects/git%2Bgithub.com%2FRubenMateus%2Fsluggy?ref=badge_shield)
 
 ---
 
@@ -164,6 +165,9 @@ See also the list of [contributors](https://github.com/rubenmateus/sluggy/graphs
 
 This project is licensed under the MIT License -
 see the [LICENSE.md](LICENSE.md) file for details.
+
+
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2FRubenMateus%2Fsluggy.svg?type=large)](https://app.fossa.io/projects/git%2Bgithub.com%2FRubenMateus%2Fsluggy?ref=badge_large)
 
 ## Acknowledgments
 
