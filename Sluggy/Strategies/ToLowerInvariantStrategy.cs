@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Sluggy
+namespace Sluggy.Strategies
 {
     /// <summary>
     /// The standard ToLowerCase strategy used by Sluggy.

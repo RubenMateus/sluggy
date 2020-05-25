@@ -1,18 +1,19 @@
 ﻿using System;
+using Sluggy.Strategies;
 using Xunit;
 
 namespace Sluggy.Tests
 {
-    public class NormalizationStrategyTests
+    public class NonAlphaNumericStrategyTests
     {
         [Trait("Project", "Sluggy")]
-        [Theory(DisplayName = "Should Normalize string")]
-        [InlineData("áãâàóôòõêè", "aaaaooooee")]
-        [InlineData("ä ö ű ő", "a o u o")]
+        [Theory(DisplayName = "Should remove nonalphanumeric characters from string")]
+        [InlineData("<>*.,;´`'~^!#%$&/()=}{[]@£€§¨+|", "")]
+        [InlineData("a<>*.,;´`'~^!#%$&/()=}{[]@£€§¨+| -a", "a a")]
         [InlineData("", "")]
         public void ShouldNormalize(string value, string expectation)
         {
-            var strategy = new NormalizationStrategy();
+            var strategy = new NonAlphaNumericStrategy();
 
             var translated = strategy.Translate(value);
 
@@ -20,12 +21,12 @@ namespace Sluggy.Tests
         }
 
         [Trait("Project", "Sluggy")]
-        [Fact(DisplayName = "NormalizationStrategy Should Throw ArgumentNullException")]
+        [Fact(DisplayName = "NonAlphaNumericStrategy Should Throw ArgumentNullException")]
         public void ShouldThrowNullArgumentException()
         {
             const string text = null;
 
-            var strategy = new NormalizationStrategy();
+            var strategy = new NonAlphaNumericStrategy();
 
             Assert.Throws<ArgumentNullException>(() => strategy.Translate(text));
         }

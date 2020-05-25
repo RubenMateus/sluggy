@@ -1,4 +1,5 @@
 using Moq;
+using Sluggy.Strategies;
 using System;
 using Xunit;
 

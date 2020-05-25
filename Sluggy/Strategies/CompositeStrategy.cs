@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace Sluggy
+namespace Sluggy.Strategies
 {
     /// <summary>
     /// The composite strategy to agreggate all the different ITranslationStrategies from Sluggy.

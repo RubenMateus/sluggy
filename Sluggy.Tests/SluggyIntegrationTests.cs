@@ -6,6 +6,7 @@ namespace Sluggy.Tests
     {
         [Trait("Project", "Sluggy")]
         [Theory(DisplayName = "Should Use Separator")]
+        [InlineData("EU GOSTO DE TÁRTE", "eu-gosto-de-tarte", "-")]
         [InlineData("EU GOSTO DE TÁRTE", "euAgostoAdeAtarte", "A")]
         [InlineData("EU GOSTO", "euBananagosto", "Banana")]
         [InlineData("", "", "")]
@@ -18,10 +19,11 @@ namespace Sluggy.Tests
 
         [Trait("Project", "Sluggy")]
         [Theory(DisplayName = "Should Convert ToSlug")]
-        [InlineData("EU GOSTO DE TÁRTE", "eu-gosto-de-tarte")]
+        [InlineData("EU GOSTO DE TÁRTE   ", "eu-gosto-de-tarte")]
         [InlineData("eu gosto de tarte        das", "eu-gosto-de-tarte-das")]
-        [InlineData("eu gosto de tarte", "eu-gosto-de-tarte")]
+        [InlineData("eu gosto de tarte   ", "eu-gosto-de-tarte")]
         [InlineData("eu não gosto de pão da avó", "eu-nao-gosto-de-pao-da-avo")]
+        [InlineData("Pão <>*.,;´`'~^!#%$&/()=}{[]@£€§¨|+ Avó - AAA", "pao-avo-aaa")]
         [InlineData("", "")]
         public void ShouldConvertToSlug(string value, string expectation)
         {

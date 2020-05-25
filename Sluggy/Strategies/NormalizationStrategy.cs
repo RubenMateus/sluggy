@@ -3,7 +3,7 @@ using System.Globalization;
 using System.Linq;
 using System.Text;
 
-namespace Sluggy
+namespace Sluggy.Strategies
 {
     /// <summary>
     /// The standard normalization used by Sluggy.
