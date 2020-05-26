@@ -9,10 +9,10 @@ namespace Sluggy.Strategies
     public class NonAlphaNumericStrategy : ITranslationStrategy
     {
         /// <summary>
-        ///
+        /// This strategy is used for removing non alpha numeric characters from the provided text.
         /// </summary>
         /// <param name="text">The text to be translated.</param>
-        /// <returns></returns>
+        /// <returns>The transformed text.</returns>
         /// <exception cref="ArgumentNullException">Thrown when text is null.</exception>
         public string Translate(string text)
         {

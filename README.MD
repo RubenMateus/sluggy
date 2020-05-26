@@ -17,9 +17,11 @@
 
 [![NuGet](https://img.shields.io/nuget/v/Sluggy.svg)](https://www.nuget.org/packages/Sluggy/)
 
-`dotnet add package Sluggy --version 2.0.1`
+`dotnet add package Sluggy --version 3.0.1`
 
 Sluggy is a configuration based class library designed to create friendly URL's.
+
+**Check release notes for more info on the latest changes.**
 
 ---
 
@@ -32,13 +34,20 @@ Sluggy is a configuration based class library designed to create friendly URL's.
 SluggyUnidecode is simple and powerful.
 Extends the Sluggy package by using the Unidecode.NET library for normalization.
 
+**Check release notes for more info on the latest changes.**
+
 ---
 
 ## QuickStart with Sluggy
 
 ### **There are 4 ways to use ToSlug()**
 
-#### The default is *new CompositeStrategy(new ToLowerInvariantStrategy(), new NormalizationStrategy())*
+#### The default strategies are:
+``` csharp
+NonAlphaNumericStrategy()
+ToLowerInvariantStrategy()
+NormalizationStrategy()
+```
 
 #### *Default separator is "-"*
 
@@ -53,7 +62,6 @@ using Sluggy;
 "Eu NãO GoStO de PãO Da Avó".ToSlug();
 // Output: "eu-nao-gosto-de-pao-da-avo"
 ```
-
 ---
 
 ### You can redefine the separator
@@ -110,7 +118,6 @@ using Sluggy;
 var separator = "/";
 
 // Defining the composite strategy
-
 var normalizationWithUpperCaseStrategy = new CompositeStrategy(
     new ToUpperCaseStrategy(),
     new NormalizationStrategy());
