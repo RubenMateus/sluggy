@@ -1,5 +1,6 @@
 ﻿using System;
 using Sluggy;
+using Sluggy.Strategies;
 using Unidecode.NET;
 
 namespace SluggyUnidecode
