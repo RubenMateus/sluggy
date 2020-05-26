@@ -9,7 +9,7 @@ namespace Sluggy.Tests
         [Trait("Project", "Sluggy")]
         [Theory(DisplayName = "Should remove nonalphanumeric characters from string")]
         [InlineData("<>*.,;´`'~^!#%$&/()=}{[]@£€§¨+|", "")]
-        [InlineData("a<>*.,;´`'~^!#%$&/()=}{[]@£€§¨+| -a", "a a")]
+        [InlineData("a<>*.,;´`'~^!#%$&/()=}{[]@£€§¨+|-ba", "aba")]
         [InlineData("", "")]
         public void ShouldNormalize(string value, string expectation)
         {

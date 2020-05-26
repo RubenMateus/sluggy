@@ -73,7 +73,6 @@ namespace Sluggy
 
             return text
                  .Split()
-                 .Where(t => t.Length != 0)
                  .Select(t => strategy.Translate(t))
                  .Where(t => t.Length != 0)
                  .Join(separator);
