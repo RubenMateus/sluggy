@@ -1,4 +1,5 @@
 using Moq;
+using Sluggy.Strategies;
 using System;
 using Xunit;
 
@@ -20,7 +21,6 @@ namespace Sluggy.Tests
         [InlineData("EU GOSTO DE TÁRTE", "tarte-tarte-tarte-tarte")]
         [InlineData("EU GOSTO", "tarte-tarte")]
         [InlineData("EU não GOSTO", "tarte-tarte-tarte")]
-        [InlineData("", "")]
         public void ShouldReturnSlugifiedWithMocked(string value, string expectation)
         {
             const string translated = "tarte";

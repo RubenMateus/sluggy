@@ -1,4 +1,4 @@
-﻿namespace Sluggy
+﻿namespace Sluggy.Strategies
 {
     /// <summary>
     /// Exposes the translation strategy, which supports a "translation" over a text.

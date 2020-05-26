@@ -1,4 +1,5 @@
 ﻿using System;
+using Sluggy.Strategies;
 using Xunit;
 
 namespace Sluggy.Tests

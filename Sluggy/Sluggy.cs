@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using Sluggy.Strategies;
 
 namespace Sluggy
 {
@@ -21,6 +22,7 @@ namespace Sluggy
         /// This is the composite strategy used by default.
         /// </summary>
         public static readonly ITranslationStrategy DefaultTranslationStrategy = new CompositeStrategy(
+            new NonAlphaNumericStrategy(),
             new ToLowerInvariantStrategy(),
             new NormalizationStrategy());
 
@@ -70,10 +72,10 @@ namespace Sluggy
             }
 
             return text
-                .Split()
-                .Where(t => t.Length != 0)
-                .Select(t => strategy.Translate(t))
-                .Join(separator);
+                 .Split()
+                 .Select(t => strategy.Translate(t))
+                 .Where(t => t.Length != 0)
+                 .Join(separator);
         }
 
         private static string Join(this IEnumerable<string> text, string separator) => string.Join(separator, text);
