@@ -23,7 +23,7 @@ Extends the Sluggy package by using the Unidecode.Net library for normalization.
 
   <ItemGroup>
     <PackageReference Include="Sluggy" Version="2.0.2" />
-    <PackageReference Include="Unidecode.NET" Version="1.4.0" />
+    <PackageReference Include="Unidecode.NET" Version="2.0.0" />
   </ItemGroup>
 
 </Project>
