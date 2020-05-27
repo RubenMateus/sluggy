@@ -12,13 +12,17 @@
     <RepositoryUrl>https://github.com/RubenMateus/sluggy</RepositoryUrl>
     <Copyright>Copyright (c) 2020 Ruben Mateus</Copyright>
     <PackageTags>slug simple normalization url friendly generator normalizer urls slugs</PackageTags>
-    <Description>Sluggy is a configuration based class library designed to create friendly URL's. 
+    <Description>
+      Sluggy is a configuration based class library designed to create friendly URL's.
 
-With crazy support out of the box, but fully configurable.</Description>
-    <PackageReleaseNotes># Updated package dependencies
-Breaking Changes:
-# Updated namespace for strategy classes to be more semantic when importing
-# Added NonAlphanumericStrategy for better support for urls and filenames</PackageReleaseNotes>
+      With crazy support out of the box, but fully configurable.
+    </Description>
+    <PackageReleaseNotes>
+      # Updated package dependencies
+      Breaking Changes:
+      # Updated namespace for strategy classes to be more semantic when importing
+      # Added NonAlphanumericStrategy for better support for urls and filenames
+    </PackageReleaseNotes>
     <RepositoryType>Library</RepositoryType>
     <Version>3.0.1</Version>
     <PackageIconUrl></PackageIconUrl>
@@ -34,5 +38,4 @@ Breaking Changes:
       <PackagePath></PackagePath>
     </None>
   </ItemGroup>
-
 </Project>
