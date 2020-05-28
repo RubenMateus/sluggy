@@ -1,9 +1,11 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
-    <Description>SluggyUnidecode is a powerful slugifier designed to create friendly URL's. Simple and powerful.
-Extends the Sluggy package by using the Unidecode.Net library for normalization.</Description>
+    <Description>
+      SluggyUnidecode is a powerful slugifier designed to create friendly URL's. Simple and powerful.
+      Extends the Sluggy package by using the Unidecode.Net library for normalization.
+    </Description>
     <Authors>Ruben Mateus</Authors>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
@@ -12,17 +14,27 @@ Extends the Sluggy package by using the Unidecode.Net library for normalization.
     <RepositoryUrl>https://github.com/RubenMateus/sluggy</RepositoryUrl>
     <RepositoryType>Library</RepositoryType>
     <PackageTags>slug simple normalization url friendly generator normalizer urls slugs unidecode</PackageTags>
-    <PackageReleaseNotes># Upgraded Sluggy version to 3.0.1
-# Upgraded Unidecode.NET to 2.0.0</PackageReleaseNotes>
-    <Version>2.0.0</Version>
-    <PackageIconUrl>https://raw.githubusercontent.com/RubenMateus/sluggy/master/sluggyUnidecode.png</PackageIconUrl>
-    <AssemblyVersion>2.0.0.0</AssemblyVersion>
-    <FileVersion>2.0.0.0</FileVersion>
+    <PackageReleaseNotes>
+      # Upgraded Sluggy version to 3.0.1
+      # Upgraded Unidecode.NET to 2.0.0
+    </PackageReleaseNotes>
+    <Version>2.0.1</Version>
+    <PackageIconUrl></PackageIconUrl>
+    <AssemblyVersion>2.0.1.0</AssemblyVersion>
+    <FileVersion>2.0.1.0</FileVersion>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <PackageIcon>sluggyUnidecode.png</PackageIcon>
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Sluggy" Version="3.0.0" />
+    <PackageReference Include="Sluggy" Version="3.0.1" />
     <PackageReference Include="Unidecode.NET" Version="2.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="..\sluggyUnidecode.png">
+      <Pack>True</Pack>
+      <PackagePath></PackagePath>
+    </None>
   </ItemGroup>
 </Project>
