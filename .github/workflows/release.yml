@@ -30,7 +30,7 @@ jobs:
     #   uses: microsoft/CSharpCodeAnalyzer@v0.1-beta
 
     - name: Coverage (Codecov)
-      uses: codecov/codecov-action@v1.0.10
+      uses: codecov/codecov-action@v1.0.12
 
     - name: Generate nuget package Sluggy
       run: dotnet pack --configuration Release -o nupkg
