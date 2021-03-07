@@ -33,7 +33,7 @@ jobs:
       uses: jitterbit/get-changed-files@v1
 
     - name: Run C# Code Analyzer on Sluggy
-      uses: microsoft/CSharpCodeAnalyzer@v0.2
+      uses: microsoft/CSharpCodeAnalyzer@v1.0
       id: analyseSluggy
       with:
         binary-path: 'Sluggy'
@@ -42,7 +42,7 @@ jobs:
       run: echo "${{ steps.analyseSluggy.outputs.results }}"
 
     - name: Run C# Code Analyzer on SluggyUnidecode
-      uses: microsoft/CSharpCodeAnalyzer@v0.2
+      uses: microsoft/CSharpCodeAnalyzer@v1.0
       id: analyseSluggyUnidecode
       with:
         binary-path: 'SluggyUnidecode'
