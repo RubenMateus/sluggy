@@ -24,11 +24,11 @@
       # Added NonAlphanumericStrategy for better support for urls and filenames
     </PackageReleaseNotes>
     <RepositoryType>Library</RepositoryType>
-    <Version>3.0.1</Version>
+    <Version>3.0.2</Version>
     <PackageIconUrl></PackageIconUrl>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
-    <AssemblyVersion>3.0.1.0</AssemblyVersion>
-    <FileVersion>3.0.1.0</FileVersion>
+    <AssemblyVersion>3.0.2.0</AssemblyVersion>
+    <FileVersion>3.0.2.0</FileVersion>
     <PackageIcon>sluggy.png</PackageIcon>
   </PropertyGroup>
 
