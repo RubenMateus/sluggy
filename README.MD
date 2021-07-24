@@ -45,7 +45,8 @@ Extends the Sluggy package by using the Unidecode.NET library for normalization.
 
 ### **There are 4 ways to use ToSlug()**
 
-#### The default strategies are:
+#### The default strategies are
+
 ``` csharp
 NonAlphaNumericStrategy()
 ToLowerInvariantStrategy()
@@ -65,6 +66,7 @@ using Sluggy;
 "Eu NãO GoStO de PãO Da Avó".ToSlug();
 // Output: "eu-nao-gosto-de-pao-da-avo"
 ```
+
 ---
 
 ### You can redefine the separator
