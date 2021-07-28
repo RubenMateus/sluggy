@@ -12,7 +12,7 @@
 ![Latest](https://github.com/RubenMateus/sluggy/workflows/Latest/badge.svg)
 
 [![CodeFactor](https://www.codefactor.io/repository/github/rubenmateus/sluggy/badge)](https://www.codefactor.io/repository/github/rubenmateus/sluggy)
-[![Codacy Badge](https://api.codacy.com/project/badge/Grade/5bef1cba89334d849c478b18d4c54a04)](https://www.codacy.com/app/RubenMateus/sluggy?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=RubenMateus/sluggy&amp;utm_campaign=Badge_Grade)
+[![Codacy Badge](https://app.codacy.com/project/badge/Grade/9ae9d163099a436aafcbf2189c23e6b6)](https://www.codacy.com/gh/RubenMateus/sluggy/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=RubenMateus/sluggy&amp;utm_campaign=Badge_Grade)
 
 ---
 
