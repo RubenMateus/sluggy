@@ -12,7 +12,7 @@ jobs:
     steps:
     - uses: actions/checkout@v2.3.4
     - name: Setup .NET Core
-      uses: actions/setup-dotnet@v1.8.1
+      uses: actions/setup-dotnet@v1.8.2
       with:
         dotnet-version: 3.1.100
 
@@ -29,14 +29,14 @@ jobs:
       run: dotnet test SluggyUnidecode.Tests/SluggyUnidecode.Tests.csproj /p:CollectCoverage=true /p:CoverletOutputFormat=opencover --no-restore
 
     - name: Coverage (Codecov)
-      uses: codecov/codecov-action@v2.0.3
+      uses: codecov/codecov-action@v2.1.0
 
     - name: Get All Changed Files
       id: files
       uses: jitterbit/get-changed-files@v1
 
     - name: Run C# Code Analyzer on Sluggy
-      uses: microsoft/CSharpCodeAnalyzer@v1.0
+      uses: microsoft/CSharpCodeAnalyzer@v1.1
       id: analyseSluggy
       with:
         binary-path: 'Sluggy'
@@ -45,7 +45,7 @@ jobs:
       run: echo "${{ steps.analyseSluggy.outputs.results }}"
 
     - name: Run C# Code Analyzer on SluggyUnidecode
-      uses: microsoft/CSharpCodeAnalyzer@v1.0
+      uses: microsoft/CSharpCodeAnalyzer@v1.1
       id: analyseSluggyUnidecode
       with:
         binary-path: 'SluggyUnidecode'
