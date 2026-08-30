@@ -1,0 +1,4 @@
+# We pin actions to major version tags instead of commit hashes.
+rules:
+  unpinned-uses:
+    disable: true
