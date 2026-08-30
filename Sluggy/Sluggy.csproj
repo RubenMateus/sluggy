@@ -7,7 +7,6 @@
     <Company></Company>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
-    <PackageLicenseUrl></PackageLicenseUrl>
     <PackageProjectUrl />
     <RepositoryUrl>https://github.com/RubenMateus/sluggy</RepositoryUrl>
     <Copyright>Copyright (c) 2020 Ruben Mateus</Copyright>
@@ -25,7 +24,6 @@
     </PackageReleaseNotes>
     <RepositoryType>Library</RepositoryType>
     <Version>3.0.2</Version>
-    <PackageIconUrl></PackageIconUrl>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <AssemblyVersion>3.0.2.0</AssemblyVersion>
     <FileVersion>3.0.2.0</FileVersion>
