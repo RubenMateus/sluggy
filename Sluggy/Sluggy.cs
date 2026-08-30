@@ -40,7 +40,7 @@ namespace Sluggy
         /// using the provided Separator and the DefaultTranslationStrategy.
         /// </summary>
         /// <param name="text">The text to be translated.</param>
-        /// <param name="separator">The separator to be used when encoutering whitespaces.</param>
+        /// <param name="separator">The separator to be used when encountering whitespaces.</param>
         /// <returns>The text transformed into a friendly url (slug) using the provided separator.</returns>
         /// <exception cref="ArgumentNullException">Thrown when text is null.</exception>
         public static string ToSlug(this string text, string separator) => ToSlug(text, separator, DefaultTranslationStrategy);
@@ -60,7 +60,7 @@ namespace Sluggy
         /// using the provided Separator and the provided Strategy or Strategies.
         /// </summary>
         /// <param name="text">The text to be translated.</param>
-        /// <param name="separator">The separator to be used when encoutering whitespaces.</param>
+        /// <param name="separator">The separator to be used when encountering whitespaces.</param>
         /// <param name="strategy">The strategy or strategies to provide extra transformations.</param>
         /// <returns>The text transformed into a friendly url (slug) using the provided separator and strategies.</returns>
         /// <exception cref="ArgumentNullException">Thrown when text is null.</exception>
