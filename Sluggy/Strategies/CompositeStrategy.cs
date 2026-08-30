@@ -3,7 +3,7 @@
 namespace Sluggy.Strategies
 {
     /// <summary>
-    /// The composite strategy to agreggate all the different ITranslationStrategies from Sluggy.
+    /// The composite strategy to aggregate all the different ITranslationStrategies from Sluggy.
     /// </summary>
     public class CompositeStrategy : ITranslationStrategy
     {
@@ -28,10 +28,10 @@ namespace Sluggy.Strategies
         }
 
         /// <summary>
-        /// Iterates throught all the strategies and translates the text using all the strategies passed.
+        /// Iterates through all the strategies and translates the text using all the strategies passed.
         /// </summary>
         /// <param name="text">The text to be translated.</param>
-        /// <returns>The translated text with the conjuction of the different passed strategies.</returns>
+        /// <returns>The translated text with the conjunction of the different passed strategies.</returns>
         public string Translate(string text)
         {
             var translated = text;
