@@ -12,7 +12,8 @@
 ![Latest](https://github.com/RubenMateus/sluggy/workflows/Latest/badge.svg)
 
 [![CodeFactor](https://www.codefactor.io/repository/github/rubenmateus/sluggy/badge)](https://www.codefactor.io/repository/github/rubenmateus/sluggy)
-[![Codacy Badge](https://app.codacy.com/project/badge/Grade/9ae9d163099a436aafcbf2189c23e6b6)](https://www.codacy.com/gh/RubenMateus/sluggy/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=RubenMateus/sluggy&amp;utm_campaign=Badge_Grade)
+[![Codacy Badge](https://app.codacy.com/project/badge/Grade/9ae9d163099a436aafcbf2189c23e6b6)](https://www.codacy.com/gh/RubenMateus/sluggy/dashboard?utm_source=github.com&utm_medium=referral&utm_content=RubenMateus/sluggy&utm_campaign=Badge_Grade)
+[![Super-Linter](https://github.com/RubenMateus/sluggy/actions/workflows/super-linter.yml?branch=master/badge.svg)](https://github.com/marketplace/actions/super-linter)
 
 ---
 
@@ -47,17 +48,17 @@ Extends the Sluggy package by using the Unidecode.NET library for normalization.
 
 #### The default strategies are
 
-``` csharp
+```csharp
 NonAlphaNumericStrategy()
 ToLowerInvariantStrategy()
 NormalizationStrategy()
 ```
 
-#### *Default separator is "-"*
+#### _Default separator is "-"_
 
 Easiest way:
 
-``` csharp
+```csharp
 using Sluggy;
 
 "EU GOSTO DE TÁRTE".ToSlug();
@@ -71,7 +72,7 @@ using Sluggy;
 
 ### You can redefine the separator
 
-``` csharp
+```csharp
 using Sluggy;
 
 // Defining the separator
@@ -88,7 +89,7 @@ var separator = "/";
 
 ### You can redefine the default composite strategy by passing as a param
 
-``` csharp
+```csharp
 using Sluggy;
 
 // Defining the composite strategy
@@ -116,7 +117,7 @@ var anotherStrategy = new CompositeStrategy(
 
 ### And lastly you can redefine the default separator and the composite strategy
 
-``` csharp
+```csharp
 using Sluggy;
 
 // Defining the separator
@@ -146,7 +147,7 @@ var anotherStrategy = new CompositeStrategy(
 
 SluggyUnidecode is simple and uses a powerful normalizer to ASCII characters.
 
-``` csharp
+```csharp
 using SluggyUnidecode;
 
 "Мне нравится татарин".ToSlug();
@@ -165,12 +166,50 @@ using SluggyUnidecode;
 Any contribution is allowed, submit a issue or pull request
 to start contributing your ideias or problems you encounter.
 
+---
+
+## Release Process
+
+Releases are fully automated via [semantic-release](https://semantic-release.gitbook.io/semantic-release/) on every push to `master`. There is no need to manually create tags or GitHub Releases.
+
+### How it works
+
+1. Push (or merge a PR) to `master`
+2. The [release workflow](https://github.com/RubenMateus/sluggy/actions/workflows/release.yml) will automatically:
+   - Build and run all tests
+   - Analyze commit messages since the last release to determine the version bump
+   - Create a git tag, GitHub Release, and changelog
+   - Pack `Sluggy` and `SluggyUnidecode` using the new version
+   - Publish packages to [NuGet](https://www.nuget.org/packages/Sluggy/) and [GitHub Packages](https://github.com/RubenMateus?tab=packages)
+
+> If no commits since the last release warrant a version bump (e.g. only `chore:` commits), no release is created.
+
+### Commit Message Format
+
+This project follows [Conventional Commits](https://www.conventionalcommits.org/). The commit message determines the version bump:
+
+| Commit prefix                                     | Example                                | Version bump              |
+| ------------------------------------------------- | -------------------------------------- | ------------------------- |
+| `fix:`                                            | `fix: handle null input in ToSlug`     | Patch (`3.0.2` → `3.0.3`) |
+| `feat:`                                           | `feat: add NonAlphanumericStrategy`    | Minor (`3.0.2` → `3.1.0`) |
+| `feat!:` or `BREAKING CHANGE:`                    | `feat!: remove legacy ToSlug overload` | Major (`3.0.2` → `4.0.0`) |
+| `chore:`, `docs:`, `style:`, `test:`, `refactor:` | `chore: bump xunit to 2.9.3`           | No release                |
+
+### Required Secrets
+
+| Secret          | Description                                                     |
+| --------------- | --------------------------------------------------------------- |
+| `NUGET_API_KEY` | API key from [nuget.org](https://www.nuget.org/account/apikeys) |
+| `GITHUB_TOKEN`  | Automatically provided by GitHub Actions                        |
+
+---
+
 ## Authors
 
 - **Ruben Mateus** - [rubenmateus](https://github.com/rubenmateus)
 
 See also the list of [contributors](https://github.com/rubenmateus/sluggy/graphs/contributors)
- who participated in this project.
+who participated in this project.
 
 ## License
 
