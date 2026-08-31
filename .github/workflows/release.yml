@@ -2,68 +2,103 @@ name: Latest
 
 on:
   push:
-    branches: [ master ]
+    branches: [main]
+
+permissions:
+  contents: read
 
 jobs:
-  build:
-
+  test:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v2.4.0
-    - name: Setup .NET Core
-      uses: actions/setup-dotnet@v1.8.2
-      with:
-        dotnet-version: 3.1.100
-    - name: Install dependencies
-      run: dotnet restore
-    - name: Build
-      run: dotnet build --configuration Release --no-restore
+      - uses: actions/checkout@v4
+      - name: Setup .NET Core
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: 8.0.x
+      - name: Install dependencies
+        run: dotnet restore
+      - name: Build
+        run: dotnet build --configuration Release --no-restore
+      - name: Test Sluggy
+        run: dotnet test Sluggy.Tests/Sluggy.Tests.csproj --no-restore
+      - name: Test SluggyUnidecode
+        run: dotnet test SluggyUnidecode.Tests/SluggyUnidecode.Tests.csproj --no-restore
 
-    - name: Test Sluggy
-      run: dotnet test Sluggy.Tests/Sluggy.Tests.csproj --no-restore
-    - name: Test SluggyUnidecode
-      run: dotnet test SluggyUnidecode.Tests/SluggyUnidecode.Tests.csproj --no-restore
+  semantic-release:
+    runs-on: ubuntu-latest
+    needs: test
+    permissions:
+      contents: write
+      issues: write
+      pull-requests: write
+    outputs:
+      new_release_published: ${{ steps.release.outputs.new_release_published }}
+      new_release_version: ${{ steps.release.outputs.new_release_version }}
 
-    - name: Coverage (Codecov)
-      uses: codecov/codecov-action@v2.1.0
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "lts/*"
+      - name: Install semantic-release
+        run: npm install -g semantic-release @semantic-release/commit-analyzer @semantic-release/release-notes-generator @semantic-release/github
+      - name: Run semantic-release
+        id: release
+        uses: cycjimmy/semantic-release-action@v4
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-    - name: Get All Changed Files
-      id: files
-      uses: jitterbit/get-changed-files@v1
+  publish:
+    runs-on: ubuntu-latest
+    needs: semantic-release
+    if: needs.semantic-release.outputs.new_release_published == 'true'
+    permissions:
+      contents: read
+      packages: write
 
-    - name: Run C# Code Analyzer on Sluggy
-      uses: microsoft/CSharpCodeAnalyzer@v1.2
-      id: analyseSluggy
-      with:
-        binary-path: 'Sluggy'
-        report-on-files: ${{ steps.files.outputs.all }}
-    - name: C# Code Analyzer analysis results - Sluggy
-      run: echo "${{ steps.analyseSluggy.outputs.results }}"
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Setup .NET Core
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: 8.0.x
+      - name: Install dependencies
+        run: dotnet restore
+      - name: Build
+        run: dotnet build --configuration Release --no-restore
 
-    - name: Run C# Code Analyzer on SluggyUnidecode
-      uses: microsoft/CSharpCodeAnalyzer@v1.2
-      id: analyseSluggyUnidecode
-      with:
-        binary-path: 'SluggyUnidecode'
-        report-on-files: ${{ steps.files.outputs.all }}
-    - name: C# Code Analyzer analysis results - SluggyUnidecode
-      run: echo "${{ steps.analyseSluggyUnidecode.outputs.results }}"
+      - name: Generate nuget package Sluggy
+        run: dotnet pack --configuration Release -o nupkg /p:Version=${{ needs.semantic-release.outputs.new_release_version }}
+        working-directory: ./Sluggy/
+      - name: Publish Sluggy to NuGet
+        run: find . -type f -name '*.nupkg' -print0 | xargs -0 -I pkg dotnet nuget push pkg -k "$nuget_api_key" -s "https://api.nuget.org/v3/index.json" --skip-duplicate
+        env:
+          nuget_api_key: ${{ secrets.NUGET_API_KEY }}
+        working-directory: ./Sluggy/nupkg
+      - name: Publish Sluggy to GitHub Packages
+        run: find . -type f -name '*.nupkg' -print0 | xargs -0 -I pkg dotnet nuget push pkg -k "$github_token" -s "https://nuget.pkg.github.com/${{ github.repository_owner }}/index.json" --skip-duplicate
+        env:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+        working-directory: ./Sluggy/nupkg
 
-    - name: Generate nuget package Sluggy
-      run: dotnet pack --configuration Release -o nupkg
-      working-directory: ./Sluggy/
-    - name: Publish nuget package
-      run: find . -name *.nupkg -type f -print0 | xargs -0 -I pkg dotnet nuget push pkg -k $nuget_api_key -s "https://api.nuget.org/v3/index.json" --skip-duplicate
-      env:
-        nuget_api_key: ${{ secrets.NUGET_API_KEY }}
-      working-directory: ./Sluggy/nupkg
-
-    - name: Generate nuget package SluggyUnidecode
-      run: dotnet pack --configuration Release -o nupkg
-      working-directory: ./SluggyUnidecode/
-    - name: Publish nuget package
-      run: find . -name *.nupkg -type f -print0 | xargs -0 -I pkg dotnet nuget push pkg -k $nuget_api_key -s "https://api.nuget.org/v3/index.json" --skip-duplicate
-      env:
-        nuget_api_key: ${{ secrets.NUGET_API_KEY }}
-      working-directory: ./SluggyUnidecode/nupkg
+      - name: Generate nuget package SluggyUnidecode
+        run: dotnet pack --configuration Release -o nupkg /p:Version=${{ needs.semantic-release.outputs.new_release_version }}
+        working-directory: ./SluggyUnidecode/
+      - name: Publish SluggyUnidecode to NuGet
+        run: find . -type f -name '*.nupkg' -print0 | xargs -0 -I pkg dotnet nuget push pkg -k "$nuget_api_key" -s "https://api.nuget.org/v3/index.json" --skip-duplicate
+        env:
+          nuget_api_key: ${{ secrets.NUGET_API_KEY }}
+        working-directory: ./SluggyUnidecode/nupkg
+      - name: Publish SluggyUnidecode to GitHub Packages
+        run: find . -type f -name '*.nupkg' -print0 | xargs -0 -I pkg dotnet nuget push pkg -k "$github_token" -s "https://nuget.pkg.github.com/${{ github.repository_owner }}/index.json" --skip-duplicate
+        env:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+        working-directory: ./SluggyUnidecode/nupkg

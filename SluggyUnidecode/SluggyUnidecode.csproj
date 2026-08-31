@@ -10,16 +10,14 @@
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
     <Copyright>Copyright (c) 2020 Ruben Mateus</Copyright>
-    <PackageLicenseUrl></PackageLicenseUrl>
     <RepositoryUrl>https://github.com/RubenMateus/sluggy</RepositoryUrl>
     <RepositoryType>Library</RepositoryType>
     <PackageTags>slug simple normalization url friendly generator normalizer urls slugs unidecode</PackageTags>
     <PackageReleaseNotes>
-      # Upgraded Sluggy version to 3.0.1
-      # Upgraded Unidecode.NET to 2.0.0
+      # Upgraded Sluggy version to 3.0.2
+      # Upgraded Unidecode.NET to 2.2.1
     </PackageReleaseNotes>
     <Version>2.0.1</Version>
-    <PackageIconUrl></PackageIconUrl>
     <AssemblyVersion>2.0.1.0</AssemblyVersion>
     <FileVersion>2.0.1.0</FileVersion>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
@@ -27,7 +25,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Sluggy" Version="3.0.1" />
+    <PackageReference Include="Sluggy" Version="3.0.2" />
     <PackageReference Include="Unidecode.NET" Version="2.1.0" />
   </ItemGroup>
 

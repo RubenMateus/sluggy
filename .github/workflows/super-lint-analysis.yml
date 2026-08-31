@@ -2,7 +2,11 @@ name: Lint Code Base
 on:
   push:
   pull_request:
-    branches: [master]
+    branches: [main]
+
+permissions:
+  contents: read
+  statuses: write
 
 jobs:
   build:
@@ -11,11 +15,11 @@ jobs:
 
     steps:
       - name: Checkout Code
-        uses: actions/checkout@v2.4.0
+        uses: actions/checkout@v4
         with:
           fetch-depth: 0
 
       - name: Lint Code Base
-        uses: github/super-linter@v4.5.1
+        uses: super-linter/super-linter@v8.7.0
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
