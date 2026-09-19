@@ -18,9 +18,9 @@ namespace Sluggy.Tests
 
         [Trait("Project", "Sluggy")]
         [Theory(DisplayName = "Should Return ToSlug With Mocked Translate")]
-        [InlineData("EU GOSTO DE T¡RTE", "tarte-tarte-tarte-tarte")]
+        [InlineData("EU GOSTO DE T√ÅRTE", "tarte-tarte-tarte-tarte")]
         [InlineData("EU GOSTO", "tarte-tarte")]
-        [InlineData("EU n„o GOSTO", "tarte-tarte-tarte")]
+        [InlineData("EU n√£o GOSTO", "tarte-tarte-tarte")]
         public void ShouldReturnSlugifiedWithMocked(string value, string expectation)
         {
             const string translated = "tarte";
