@@ -62,9 +62,14 @@ jobs:
             exit 0
           fi
 
-          tag="$(git tag --points-at HEAD --list 'v*' | sort -V | tail -n1)"
-          if [ -n "$tag" ]; then
-            echo "release_version=${tag#v}" >> "$GITHUB_OUTPUT"
+          mapfile -t release_tags < <(git tag --points-at HEAD --list 'v*')
+          if [ "${#release_tags[@]}" -gt 1 ]; then
+            echo "Expected at most one semantic-release tag on HEAD, found: ${release_tags[*]}" >&2
+            exit 1
+          fi
+
+          if [ "${#release_tags[@]}" -eq 1 ]; then
+            echo "release_version=${release_tags[0]#v}" >> "$GITHUB_OUTPUT"
           fi
         env:
           new_release_version: ${{ steps.release.outputs.new_release_version }}
