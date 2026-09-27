@@ -57,10 +57,17 @@ jobs:
       - name: Resolve release version
         id: release_version
         run: |
+          if [ -n "$new_release_version" ]; then
+            echo "release_version=$new_release_version" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+
           tag="$(git tag --points-at HEAD --list 'v*' | sort -V | tail -n1)"
           if [ -n "$tag" ]; then
             echo "release_version=${tag#v}" >> "$GITHUB_OUTPUT"
           fi
+        env:
+          new_release_version: ${{ steps.release.outputs.new_release_version }}
 
   publish:
     runs-on: ubuntu-latest
