@@ -13,7 +13,7 @@
 
 [![CodeFactor](https://www.codefactor.io/repository/github/rubenmateus/sluggy/badge)](https://www.codefactor.io/repository/github/rubenmateus/sluggy)
 [![Codacy Badge](https://app.codacy.com/project/badge/Grade/9ae9d163099a436aafcbf2189c23e6b6)](https://www.codacy.com/gh/RubenMateus/sluggy/dashboard?utm_source=github.com&utm_medium=referral&utm_content=RubenMateus/sluggy&utm_campaign=Badge_Grade)
-[![Super-Linter](https://github.com/RubenMateus/sluggy/actions/workflows/super-lint-analysis.yml/badge.svg?branch=master)](https://github.com/marketplace/actions/super-linter)
+[![Super-Linter](https://github.com/RubenMateus/sluggy/actions/workflows/super-lint-analysis.yml/badge.svg?branch=main)](https://github.com/marketplace/actions/super-linter)
 
 ---
 
