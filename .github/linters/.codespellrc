@@ -1,0 +1,3 @@
+[codespell]
+skip = .gitignore
+ignore-words-list = strat
