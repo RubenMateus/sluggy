@@ -33,4 +33,4 @@ jobs:
         run: dotnet test SluggyUnidecode.Tests/SluggyUnidecode.Tests.csproj /p:CollectCoverage=true /p:CoverletOutputFormat=opencover --no-restore
 
       - name: Coverage (Codecov)
-        uses: codecov/codecov-action@v5
+        uses: codecov/codecov-action@v7
