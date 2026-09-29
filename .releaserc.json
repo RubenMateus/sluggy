@@ -1,5 +1,6 @@
 {
   "branches": ["main"],
+  "tagFormat": "v${version}-sluggy",
   "plugins": [
     "@semantic-release/commit-analyzer",
     "@semantic-release/release-notes-generator",
