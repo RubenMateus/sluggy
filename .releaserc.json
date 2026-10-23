@@ -1,9 +1,14 @@
 {
   "branches": ["main"],
-  "tagFormat": "v${version}-sluggy",
+  "tagFormat": "sluggy-${version}",
   "plugins": [
     "@semantic-release/commit-analyzer",
     "@semantic-release/release-notes-generator",
-    "@semantic-release/github"
+    [
+      "@semantic-release/github",
+      {
+        "releaseName": "Sluggy v${nextRelease.version}"
+      }
+    ]
   ]
 }

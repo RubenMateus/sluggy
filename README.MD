@@ -1,19 +1,18 @@
 # Sluggy | SluggyUnidecode
 
-![sluggy](https://raw.githubusercontent.com/RubenMateus/sluggy/master/sluggy.png)
-![sluggyUnidecode](https://raw.githubusercontent.com/RubenMateus/sluggy/master/sluggyUnidecode.png)
+![sluggy](https://raw.githubusercontent.com/RubenMateus/sluggy/main/sluggy.png)
+![sluggyUnidecode](https://raw.githubusercontent.com/RubenMateus/sluggy/main/sluggyUnidecode.png)
 
 ---
 
-[![Build Status](https://travis-ci.org/RubenMateus/sluggy.svg?branch=master)](https://travis-ci.org/RubenMateus/sluggy)
-[![codecov](https://codecov.io/gh/RubenMateus/sluggy/branch/master/graph/badge.svg)](https://codecov.io/gh/RubenMateus/sluggy)
-
-![Build and Test](https://github.com/RubenMateus/sluggy/workflows/Build%20and%20Test/badge.svg)
-![Latest](https://github.com/RubenMateus/sluggy/workflows/Latest/badge.svg)
+[![Build and Test](https://github.com/RubenMateus/sluggy/actions/workflows/build-test.yml/badge.svg)](https://github.com/RubenMateus/sluggy/actions/workflows/build-test.yml)
+[![Latest](https://github.com/RubenMateus/sluggy/actions/workflows/release.yml/badge.svg?branch=main)](https://github.com/RubenMateus/sluggy/actions/workflows/release.yml)
+[![CodeQL](https://github.com/RubenMateus/sluggy/actions/workflows/codeql-analysis.yml/badge.svg?branch=main)](https://github.com/RubenMateus/sluggy/actions/workflows/codeql-analysis.yml)
+[![Super-Linter](https://github.com/RubenMateus/sluggy/actions/workflows/super-lint-analysis.yml/badge.svg?branch=main)](https://github.com/RubenMateus/sluggy/actions/workflows/super-lint-analysis.yml)
+[![codecov](https://codecov.io/gh/RubenMateus/sluggy/branch/main/graph/badge.svg)](https://codecov.io/gh/RubenMateus/sluggy)
 
 [![CodeFactor](https://www.codefactor.io/repository/github/rubenmateus/sluggy/badge)](https://www.codefactor.io/repository/github/rubenmateus/sluggy)
 [![Codacy Badge](https://app.codacy.com/project/badge/Grade/9ae9d163099a436aafcbf2189c23e6b6)](https://www.codacy.com/gh/RubenMateus/sluggy/dashboard?utm_source=github.com&utm_medium=referral&utm_content=RubenMateus/sluggy&utm_campaign=Badge_Grade)
-[![Super-Linter](https://github.com/RubenMateus/sluggy/actions/workflows/super-lint-analysis.yml/badge.svg?branch=main)](https://github.com/marketplace/actions/super-linter)
 
 ---
 
@@ -21,11 +20,12 @@
 
 [![NuGet](https://img.shields.io/nuget/v/Sluggy.svg)](https://www.nuget.org/packages/Sluggy/)
 
-`dotnet add package Sluggy --version 3.0.1`
+`dotnet add package Sluggy`
 
 Sluggy is a configuration based class library designed to create friendly URL's.
+It targets `netstandard2.0`.
 
-**Check release notes for more info on the latest changes.**
+**Check the [release notes](https://github.com/RubenMateus/sluggy/releases) for more info on the latest changes.**
 
 ---
 
@@ -33,12 +33,12 @@ Sluggy is a configuration based class library designed to create friendly URL's.
 
 [![NuGet](https://img.shields.io/nuget/v/SluggyUnidecode.svg)](https://www.nuget.org/packages/SluggyUnidecode/)
 
-`dotnet add package SluggyUnidecode --version 2.0.1`
+`dotnet add package SluggyUnidecode`
 
 SluggyUnidecode is simple and powerful.
-Extends the Sluggy package by using the Unidecode.NET library for normalization.
+Extends the Sluggy package by using the [Unidecode.NET](https://www.nuget.org/packages/Unidecode.NET/) library for normalization.
 
-**Check release notes for more info on the latest changes.**
+**Check the [release notes](https://github.com/RubenMateus/sluggy/releases) for more info on the latest changes.**
 
 ---
 
@@ -46,12 +46,12 @@ Extends the Sluggy package by using the Unidecode.NET library for normalization.
 
 ### **There are 4 ways to use ToSlug()**
 
-#### The default strategies are
+#### The default strategies are applied in this order
 
 ```csharp
-NonAlphaNumericStrategy()
+NonAlphaNumericStrategy()   // removes everything that is not a letter, digit or whitespace
 ToLowerInvariantStrategy()
-NormalizationStrategy()
+NormalizationStrategy()     // removes diacritics (é -> e, ã -> a)
 ```
 
 #### _Default separator is "-"_
@@ -66,6 +66,9 @@ using Sluggy;
 
 "Eu NãO GoStO de PãO Da Avó".ToSlug();
 // Output: "eu-nao-gosto-de-pao-da-avo"
+
+"Hello, World! It's 2026".ToSlug();
+// Output: "hello-world-its-2026"
 ```
 
 ---
@@ -87,23 +90,44 @@ var separator = "/";
 
 ---
 
-### You can redefine the default composite strategy by passing as a param
+### You can redefine the composite strategy by passing it as a param
+
+The built-in strategies live in the `Sluggy.Strategies` namespace.
+You can write your own by implementing `ITranslationStrategy`:
+
+```csharp
+using System.Linq;
+using Sluggy.Strategies;
+
+// Example custom strategies (not part of the package)
+public class RemoveEveryVowelStrategy : ITranslationStrategy
+{
+    public string Translate(string text) =>
+        new string(text.Where(c => "aeiouAEIOU".IndexOf(c) < 0).ToArray());
+}
+
+public class ToUpperCaseStrategy : ITranslationStrategy
+{
+    public string Translate(string text) => text.ToUpperInvariant();
+}
+```
 
 ```csharp
 using Sluggy;
+using Sluggy.Strategies;
 
-// Defining the composite strategy
-var defaultStrategy = new CompositeStrategy(
+// Defining a composite strategy without the NonAlphaNumericStrategy
+var strategy = new CompositeStrategy(
     new ToLowerInvariantStrategy(),
     new NormalizationStrategy());
 
-"EU GOSTO DE TÁRTE".ToSlug(defaultStrategy);
+"EU GOSTO DE TÁRTE".ToSlug(strategy);
 // Output: "eu-gosto-de-tarte"
 
-"Eu NãO GoStO de PãO Da Avó".ToSlug(defaultStrategy);
+"Eu NãO GoStO de PãO Da Avó".ToSlug(strategy);
 // Output: "eu-nao-gosto-de-pao-da-avo"
 
-// Redefine the composite strategy
+// Adding a custom strategy
 var anotherStrategy = new CompositeStrategy(
     new ToLowerInvariantStrategy(),
     new NormalizationStrategy(),
@@ -115,10 +139,11 @@ var anotherStrategy = new CompositeStrategy(
 
 ---
 
-### And lastly you can redefine the default separator and the composite strategy
+### And lastly you can redefine both the separator and the composite strategy
 
 ```csharp
 using Sluggy;
+using Sluggy.Strategies;
 
 // Defining the separator
 var separator = "/";
@@ -146,25 +171,40 @@ var anotherStrategy = new CompositeStrategy(
 ## QuickStart with SluggyUnidecode
 
 SluggyUnidecode is simple and uses a powerful normalizer to ASCII characters.
+Its default strategy is `NonAlphaNumericStrategy`, `UnidecodeStrategy` and `ToLowerInvariantStrategy`.
 
 ```csharp
 using SluggyUnidecode;
 
 "Мне нравится татарин".ToSlug();
-// Output: "mne-nravitsya-tatarin"
+// Output: "mne-nravitsia-tatarin"
 
 "ア α a A".ToSlug();
-// Output: "a-a-a-a";
+// Output: "a-a-a-a"
 
 // Even more powerful
-"ch\u00e2teau Vi\u00f1edos".ToSlug();
+"château Viñedos".ToSlug();
 // Output: "chateau-vinedos"
+
+// The separator can be redefined as well
+"Мне нравится татарин".ToSlug("_");
+// Output: "mne_nravitsia_tatarin"
 ```
+
+> If both `Sluggy` and `SluggyUnidecode` namespaces are imported in the same file, the `ToSlug()` call is ambiguous.
+> Call it explicitly instead, e.g. `SluggyUnidecode.SluggyUnidecode.ToSlug(text)`.
 
 ## Contributing
 
-Any contribution is allowed, submit a issue or pull request
-to start contributing your ideias or problems you encounter.
+Any contribution is welcome: submit an issue or pull request
+to start contributing your ideas or problems you encounter.
+
+To build and run the tests locally you need the [.NET 8 SDK](https://dotnet.microsoft.com/download/dotnet/8.0):
+
+```sh
+dotnet build
+dotnet test
+```
 
 ---
 
@@ -177,10 +217,18 @@ Releases are fully automated via [semantic-release](https://semantic-release.git
 1. Push (or merge a PR) to `main`
 2. The [release workflow](https://github.com/RubenMateus/sluggy/actions/workflows/release.yml) will automatically:
    - Build and run all tests
-   - Analyze commit messages since the last release to determine the version bump
-   - Create a git tag and GitHub Release with generated release notes
-   - Pack `Sluggy` and `SluggyUnidecode` using the new version
-   - Publish packages to [NuGet](https://www.nuget.org/packages/Sluggy/) and [GitHub Packages](https://github.com/RubenMateus?tab=packages)
+   - Run semantic-release once per package, each with its own tag format (`sluggy-<version>` and `sluggyUnidecode-<version>`) and version line
+   - Create a package-specific git tag and GitHub Release with generated release notes
+   - Pack each released package with its own version (`SluggyUnidecode` depends on the latest released `Sluggy` version)
+   - Publish packages to NuGet ([Sluggy](https://www.nuget.org/packages/Sluggy/), [SluggyUnidecode](https://www.nuget.org/packages/SluggyUnidecode/)) and [GitHub Packages](https://github.com/RubenMateus?tab=packages)
+
+> Both release streams analyze **all** commits on `main` since their own last tag; commits are not filtered by path.
+> A `fix:` or `feat:` commit therefore bumps both packages, each from its own current version.
+
+The release streams continue from the latest `sluggy-*` and `sluggyUnidecode-*` tags, and the workflow fails if no tag matching a package's format is found.
+Without a matching tag semantic-release would start over at `1.0.0`, which is already published on NuGet.
+The package name comes first because semantic-release only anchors tag formats at the start: with `<version>-sluggy`, tags like `<version>-sluggyUnidecode` would also count as Sluggy releases.
+Older tags (`v*-sluggy`, `*-Sluggy`, `*-sluggyUnidecode`) are kept for history and ignored by the current formats.
 
 > If no commits since the last release warrant a version bump (e.g. only `chore:` commits), no release is created.
 
@@ -214,7 +262,7 @@ who participated in this project.
 ## License
 
 This project is licensed under the MIT License -
-see the [LICENSE.md](LICENSE.md) file for details.
+see the [LICENSE](LICENSE) file for details.
 
 ## Acknowledgments
 

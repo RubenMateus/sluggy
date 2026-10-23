@@ -1,6 +1,7 @@
 name: Lint Code Base
 on:
   push:
+    branches: [main]
   pull_request:
     branches: [main]
 
@@ -15,12 +16,12 @@ jobs:
 
     steps:
       - name: Checkout Code
-        uses: actions/checkout@v5
+        uses: actions/checkout@v7
         with:
           persist-credentials: false
           fetch-depth: 0
 
       - name: Lint Code Base
-        uses: super-linter/super-linter@v8.7.0
+        uses: super-linter/super-linter@v9.0.0
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
