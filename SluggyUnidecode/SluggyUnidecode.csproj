@@ -13,11 +13,10 @@
     <RepositoryUrl>https://github.com/RubenMateus/sluggy</RepositoryUrl>
     <RepositoryType>Library</RepositoryType>
     <PackageTags>slug simple normalization url friendly generator normalizer urls slugs unidecode</PackageTags>
-    <PackageReleaseNotes>
-      # Upgraded Sluggy version to 3.0.2
-      # Unidecode.NET remains at 2.1.0 for netstandard2.0 compatibility
-    </PackageReleaseNotes>
+    <PackageReleaseNotes>See https://github.com/RubenMateus/sluggy/releases</PackageReleaseNotes>
     <Version>2.0.1</Version>
+    <!-- Set by the release workflow; a package-specific name keeps it from flowing into referenced projects like /p:Version would. -->
+    <Version Condition="'$(SluggyUnidecodeVersion)' != ''">$(SluggyUnidecodeVersion)</Version>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <PackageIcon>sluggyUnidecode.png</PackageIcon>
   </PropertyGroup>

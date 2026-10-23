@@ -1,0 +1,14 @@
+{
+  "branches": ["main"],
+  "tagFormat": "sluggyUnidecode-${version}",
+  "plugins": [
+    "@semantic-release/commit-analyzer",
+    "@semantic-release/release-notes-generator",
+    [
+      "@semantic-release/github",
+      {
+        "releaseName": "SluggyUnidecode v${nextRelease.version}"
+      }
+    ]
+  ]
+}

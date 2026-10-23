@@ -16,14 +16,11 @@
 
       With crazy support out of the box, but fully configurable.
     </Description>
-    <PackageReleaseNotes>
-      # Updated package dependencies
-      Breaking Changes:
-      # Updated namespace for strategy classes to be more semantic when importing
-      # Added NonAlphanumericStrategy for better support for urls and filenames
-    </PackageReleaseNotes>
+    <PackageReleaseNotes>See https://github.com/RubenMateus/sluggy/releases</PackageReleaseNotes>
     <RepositoryType>Library</RepositoryType>
     <Version>3.0.2</Version>
+    <!-- Set by the release workflow; a package-specific name keeps it from flowing into referenced projects like /p:Version would. -->
+    <Version Condition="'$(SluggyVersion)' != ''">$(SluggyVersion)</Version>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <PackageIcon>sluggy.png</PackageIcon>
   </PropertyGroup>

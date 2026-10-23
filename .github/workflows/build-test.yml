@@ -12,11 +12,11 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v5
+      - uses: actions/checkout@v7
         with:
           persist-credentials: false
       - name: Setup .NET Core
-        uses: actions/setup-dotnet@v4
+        uses: actions/setup-dotnet@v6
         with:
           dotnet-version: 8.0.x
 
@@ -33,4 +33,4 @@ jobs:
         run: dotnet test SluggyUnidecode.Tests/SluggyUnidecode.Tests.csproj /p:CollectCoverage=true /p:CoverletOutputFormat=opencover --no-restore
 
       - name: Coverage (Codecov)
-        uses: codecov/codecov-action@v5
+        uses: codecov/codecov-action@v7
