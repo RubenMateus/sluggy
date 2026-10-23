@@ -7,7 +7,7 @@
     [
       "@semantic-release/github",
       {
-        "releaseName": "Sluggy v${nextRelease.version}"
+        "releaseNameTemplate": "Sluggy v<%= nextRelease.version %>"
       }
     ]
   ]
