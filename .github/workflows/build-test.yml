@@ -1,6 +1,8 @@
 name: Build and Test
 
 on:
+  push:
+    branches: [main]
   pull_request:
     branches: [main]
 
@@ -34,3 +36,6 @@ jobs:
 
       - name: Coverage (Codecov)
         uses: codecov/codecov-action@v7
+        with:
+          token: ${{ secrets.CODECOV_TOKEN }}
+          fail_ci_if_error: true
