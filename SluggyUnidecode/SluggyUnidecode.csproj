@@ -7,15 +7,14 @@
       Extends the Sluggy package by using the Unidecode.Net library for normalization.
     </Description>
     <Authors>Ruben Mateus</Authors>
-    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
     <Copyright>Copyright (c) 2020 Ruben Mateus</Copyright>
     <RepositoryUrl>https://github.com/RubenMateus/sluggy</RepositoryUrl>
     <RepositoryType>Library</RepositoryType>
     <PackageTags>slug simple normalization url friendly generator normalizer urls slugs unidecode</PackageTags>
     <PackageReleaseNotes>See https://github.com/RubenMateus/sluggy/releases</PackageReleaseNotes>
-    <Version>2.0.1</Version>
-    <!-- Set by the release workflow; a package-specific name keeps it from flowing into referenced projects like /p:Version would. -->
+    <!-- Set by the release workflow from semantic-release; local builds use the SDK default (1.0.0).
+         A package-specific name keeps it from flowing into referenced projects like /p:Version would. -->
     <Version Condition="'$(SluggyUnidecodeVersion)' != ''">$(SluggyUnidecodeVersion)</Version>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <PackageIcon>sluggyUnidecode.png</PackageIcon>

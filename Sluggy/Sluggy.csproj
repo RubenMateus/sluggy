@@ -5,7 +5,6 @@
     <Authors>Ruben Mateus, Sérgio Freitas</Authors>
     <PackageId>Sluggy</PackageId>
     <Company></Company>
-    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
     <PackageProjectUrl />
     <RepositoryUrl>https://github.com/RubenMateus/sluggy</RepositoryUrl>
@@ -18,8 +17,8 @@
     </Description>
     <PackageReleaseNotes>See https://github.com/RubenMateus/sluggy/releases</PackageReleaseNotes>
     <RepositoryType>Library</RepositoryType>
-    <Version>3.0.2</Version>
-    <!-- Set by the release workflow; a package-specific name keeps it from flowing into referenced projects like /p:Version would. -->
+    <!-- Set by the release workflow from semantic-release; local builds use the SDK default (1.0.0).
+         A package-specific name keeps it from flowing into referenced projects like /p:Version would. -->
     <Version Condition="'$(SluggyVersion)' != ''">$(SluggyVersion)</Version>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <PackageIcon>sluggy.png</PackageIcon>
